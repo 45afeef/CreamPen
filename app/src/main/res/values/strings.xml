@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">CreamPen</string>
+    <string name="mySeparator">%4#@!</string>
+    <string name="empty">\nFound Nothing
+        \nTry creating new
+        <b>Courses, Lessons</b>
+        \nand
+        \nTry <i>Saving</i> Items to
+        <b>Learn</b>
+    </string>
+    <string name="play">Play and Pause</string>
+    <string name="preference_file_key">CreamPenSP</string>
+    <string name="saved_stream_key">streamKey</string>
+    <string name="finish_exam">Finish Exam</string>
+    <string name="skipped">Skipped</string>
+    <string name="quiz_name">Quiz Name</string>
+    <string name="instruction">Instruction</string>
+    <string name="max_time_in_minutes">Maximum time allowed in minutes</string>
+    <string name="add_new_question">Add new Question</string>
+    <string name="create_quiz">Create New Quiz</string>
+    <string name="save_quiz">Save Quiz</string>
+
+
+    <string name="CodeLesson">100</string>
+    <string name="CodeQuiz">101</string>
+    <string name="create_course">Create New Course</string>
+    <string name="hasSaved">hasSaved</string>
+    <string name="slideCount">slideCount</string>
+    <string name="slide">slide</string>
+    <string name="lessonName">lessonName</string>
+    <string name="topicCount">topicCount</string>
+    <string name="topic">topic</string>
+    <string name="help_us_to_grow">Help us to grow</string>
+    <string name="bank_account_details">Education is free &amp; always will be
+        \n<b>Help us to teach more, reach more</b>
+        \nA/c No : 34075835022 (SBI)
+        \nHolder : Afeef K K
+        \nIFSC   : SBIN0003035
+        \n<b>No donation?</b>
+        \nJust Create Lessons &amp; spread the word
+    </string>
+</resources>

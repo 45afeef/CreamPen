@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AddQuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_topics"
+            android:text="Click here to connect this question with right topics"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/tv_question"
+            android:layout_marginTop="10dp"
+            android:hint="Type your Question "
+            android:minLines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rg_options"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:outlineSpotShadowColor="@color/white"
+                android:outlineAmbientShadowColor="@color/white">
+
+                <RadioButton
+                    android:id="@+id/rb_optionA"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:checked="false"
+                    android:text="A"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:background="@drawable/radio_flat_selector"
+                    android:textColor="@color/radio_flat_text_selector"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_optionB"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/radio_flat_selector"
+                    android:textColor="@color/radio_flat_text_selector"
+                    android:checked="false"
+                    android:text="B"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"/>
+
+                <RadioButton
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:id="@+id/rb_optionC"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/radio_flat_selector"
+                    android:textColor="@color/radio_flat_text_selector"
+                    android:checked="false"
+                    android:text="C"/>
+
+                <RadioButton
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="D"
+                    android:checked="false"
+                    android:id="@+id/rb_optionD"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/radio_flat_selector"
+                    android:textColor="@color/radio_flat_text_selector"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/et_A"
+                    android:layout_marginStart="5dp"
+                    android:hint="Option A"
+                    android:minLines="1"
+                    android:textColor="@color/black"
+
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+
+                <EditText
+                    android:id="@+id/et_B"
+                    android:layout_marginStart="5dp"
+                    android:hint="Option B"
+                    android:minLines="1"
+                    android:textColor="@color/black"
+
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+
+                <EditText
+                    android:id="@+id/et_C"
+                    android:layout_marginStart="5dp"
+                    android:hint="Option C"
+                    android:minLines="1"
+                    android:textColor="@color/black"
+
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+
+
+                <EditText
+                    android:id="@+id/et_D"
+                    android:layout_marginStart="5dp"
+                    android:hint="Option D"
+                    android:minLines="1"
+                    android:textColor="@color/black"
+
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_saveQuestion"
+            android:text="Save Question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

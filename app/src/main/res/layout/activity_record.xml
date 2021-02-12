@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    android:keepScreenOn="true"
+    tools:context=".Activity.RecordActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/recordpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c000"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp" />
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fullscreen_content_controls"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            tools:ignore="UselessParent">
+
+            <ImageButton
+                android:id="@+id/pre_button"
+
+                android:layout_width="@dimen/mediaButtonSize"
+                android:layout_height="@dimen/mediaButtonSize"
+                android:background="@drawable/black"
+                android:scaleType="centerInside"
+                android:src="@drawable/previous"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <!--style="?metaButtonBarButtonStyle"-->
+            <ImageButton
+                android:id="@+id/next_button"
+                android:layout_width="@dimen/mediaButtonSize"
+                android:layout_height="@dimen/mediaButtonSize"
+                android:background="@drawable/black"
+                android:scaleType="centerInside"
+                android:src="@drawable/next"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnrecord"
+
+                android:layout_width="@dimen/mediaButtonSize"
+                android:layout_height="@dimen/mediaButtonSize"
+                android:background="@drawable/rose"
+                android:scaleType="centerInside"
+                android:src="@drawable/record"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnPlay"
+
+                android:visibility="gone"
+                android:layout_width="@dimen/mediaButtonSize"
+                android:layout_height="@dimen/mediaButtonSize"
+                android:background="@drawable/rose"
+                android:scaleType="centerInside"
+                android:src="@drawable/play"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <SeekBar
+                android:id="@+id/sBar"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:progressDrawable="@drawable/red_scrubber_progress"
+                android:thumb="@drawable/red_scrubber_control"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/upload_button"
+                app:layout_constraintStart_toEndOf="@+id/btnPlay" />
+
+
+
+            <ImageButton
+                android:id="@+id/upload_button"
+                android:visibility="gone"
+
+                android:layout_width="@dimen/mediaButtonSize"
+                android:layout_height="@dimen/mediaButtonSize"
+                android:background="@drawable/rose"
+                android:scaleType="centerInside"
+                android:src="@drawable/upload"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/timeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slide Numbers ere"
+                android:textColor="@color/green"
+                android:background="@color/transparent_black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        >
+        <LinearLayout
+            android:id="@+id/pauseView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/transparent_black"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/resume"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/record"
+                android:background="@drawable/rose"/>
+
+
+            <ImageView
+                android:id="@+id/stop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/rose"
+                android:src="@drawable/stop" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</FrameLayout>

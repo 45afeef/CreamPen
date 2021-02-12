@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    >
+
+    <TextView
+        android:id="@+id/tv_expandable_item"
+        android:padding="4dp"
+        android:textSize="18sp"
+        android:text="Subjct Name will appears here"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_expand"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expandable_item"
+        app:layout_constraintTop_toTopOf="@id/tv_expandable_item"
+        android:layout_margin="8dp"
+        android:background="@drawable/next"
+        android:rotation="90"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@android:drawable/ic_input_add"
+        app:layout_constraintEnd_toStartOf="@id/btn_expand"
+        app:layout_constraintTop_toTopOf="@id/tv_expandable_item"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expandable_item"
+        android:layout_margin="8dp"/>
+
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        android:background="@android:drawable/ic_menu_delete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expandable_item"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        app:layout_constraintTop_toTopOf="@id/tv_expandable_item" />
+
+    <LinearLayout
+        android:id="@+id/child_item_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_expandable_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

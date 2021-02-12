@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/black3"
+        android:gravity="center">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/tv_question"
+                android:layout_marginTop="30dp"
+                android:hint="Type your Question "
+                android:textColorHint="@color/white_shade"
+                android:textSize="20sp"
+                android:minLines="1"
+                android:textColor="@color/colorCreamLight"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        <TextView
+                android:id="@+id/tv_OptionA"
+                android:layout_margin="5dp"
+                android:hint="A"
+                android:minLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        <TextView
+                android:id="@+id/tv_OptionB"
+                android:layout_margin="5dp"
+                android:hint="B"
+                android:minLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        <TextView
+                android:id="@+id/tv_OptionC"
+                android:layout_margin="5dp"
+                android:hint="C"
+                android:minLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        <TextView
+                android:id="@+id/tv_OptionD"
+                android:layout_margin="5dp"
+                android:hint="D"
+                android:minLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

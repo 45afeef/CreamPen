@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="selectedquestions" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <library-updates>
+      <library-update>
+        <group-id>androidx.test</group-id>
+        <name>runner</name>
+        <version>1.3.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.firebase</group-id>
+        <name>firebase-analytics</name>
+        <version>17.5.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.android.gms</group-id>
+        <name>play-services-ads</name>
+        <version>19.4.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.firebase</group-id>
+        <name>firebase-auth</name>
+        <version>19.4.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.firebase</group-id>
+        <name>firebase-firestore</name>
+        <version>21.7.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.vectordrawable</group-id>
+        <name>vectordrawable</name>
+        <version>1.2.0-alpha02</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.multidex</group-id>
+        <name>multidex</name>
+        <version>2.0.1</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.github.bumptech.glide</group-id>
+        <name>compiler</name>
+        <version>4.11.0</version>
+        <repository>JCenter</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.room</group-id>
+        <name>room-compiler</name>
+        <version>2.3.0-alpha02</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.firebase</group-id>
+        <name>firebase-storage</name>
+        <version>19.2.0</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.room</group-id>
+        <name>room-testing</name>
+        <version>2.3.0-alpha02</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>junit</group-id>
+        <name>junit</name>
+        <version>4.13</version>
+        <repository>JCenter</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.appcompat</group-id>
+        <name>appcompat</name>
+        <version>1.3.0-alpha02</version>
+        <repository>Google</repository>
+      </library-update>
+    </library-updates>
+    <last-search-timestamp>1601900048696</last-search-timestamp>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java" line="209" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java" line="151" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be09c13b-16af-45b0-a73d-b44c6e50acd8" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CreamPen" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CreamPen" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ChooseImageActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="177" column="9" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
+              <folding>
+                <element signature="method#onCreate#0;class#ChooseImageActivity#0" />
+                <element signature="method#loadUiandImages#0;class#ChooseImageActivity#0" />
+                <element signature="class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="method#onCreateViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="method#onBindViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="method#getItemCount#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="class#ViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="method#ViewHolder#0;class#ViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+                <element signature="method#onRequestPermissionsResult#0;class#ChooseImageActivity#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/StudioActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="183" column="51" selection-start-line="183" selection-start-column="51" selection-end-line="183" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#StudioActivity#0" />
+                <element signature="docComment;field#mContext#0;class#StudioActivity#0" />
+                <element signature="docComment;field#sliderAdapter#0;class#StudioActivity#0" />
+                <element signature="method#onBackPressed#0;class#StudioActivity#0" />
+                <element signature="e#2212#2523#1" />
+                <element signature="e#2226#2311#0" />
+                <element signature="e#2537#2670#1" />
+                <element signature="e#3813#3949#1" />
+                <element signature="e#4534#4658#0" />
+                <element signature="e#4913#5337#0" />
+                <element signature="e#5381#5710#0" />
+                <element signature="e#5722#5835#0" />
+                <element signature="e#6112#6510#1" />
+                <element signature="e#6162#6498#0" />
+                <element signature="e#6553#6709#0" />
+                <element signature="method#hide#0;class#StudioActivity#0" />
+                <element signature="method#deleteLessonDraft#0;class#StudioActivity#0" />
+                <element signature="method#onSaveInstanceState#0;class#StudioActivity#0" />
+                <element signature="method#onRestoreInstanceState#0;class#StudioActivity#0" />
+                <element signature="method#onPause#0;class#StudioActivity#0" />
+                <element signature="method#onResume#0;class#StudioActivity#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="Class" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>4L</find>
+      <find>viewtype</find>
+      <find>shared</find>
+      <find>pyqList</find>
+      <find>lastsaved</find>
+      <find>5L</find>
+      <find>document</find>
+      <find>ads</find>
+      <find>adView.loadAd(adRequest);</find>
+      <find>//adView.loadAd(adRequest);</find>
+      <find>loadAds()</find>
+      <find>RC_choose_</find>
+      <find>slidelist.add</find>
+      <find>loading</find>
+      <find>interface</find>
+      <find>intentfrom</find>
+      <find>alert</find>
+      <find>edittext</find>
+      <find>.add</find>
+      <find>.add(</find>
+      <find>Showing conte</find>
+      <find>stream</find>
+      <find>selectedquestions</find>
+      <find>101%4#@!</find>
+      <find>result</find>
+      <find>loadstream</find>
+      <find>delete</find>
+      <find>alertdialo</find>
+      <find>alertdialog</find>
+      <find>btndelete</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>red</replace>
+      <replace>setTextColor</replace>
+      <replace>BLACK</replace>
+      <replace>disabledColor</replace>
+      <replace>Color.rgb(0,200,0)</replace>
+      <replace>selected</replace>
+      <replace>anColor</replace>
+      <replace>topic</replace>
+      <replace>right();</replace>
+      <replace>wrong();</replace>
+      <replace>subTopic</replace>
+      <replace>String</replace>
+      <replace>main</replace>
+      <replace>sub</replace>
+      <replace>get(i)</replace>
+      <replace>name</replace>
+      <replace>maxTime</replace>
+      <replace>TypeIdName</replace>
+      <replace>Type</replace>
+      <replace>items</replace>
+      <replace>getIntent()</replace>
+      <replace>userMap</replace>
+      <replace>=</replace>
+      <replace>user</replace>
+      <replace>WEB_ITEM_VIEW_TYPE</replace>
+      <replace>WebViewHolder</replace>
+      <replace>colorArray</replace>
+      <replace>margin</replace>
+      <replace>//adView.loadAd(adRequest);</replace>
+      <replace>RC_NEW_</replace>
+    </replaceStrings>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/app/cream pen.jks" />
+    <option name="KEY_ALIAS" value="ParayadaLearn" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_color_choosing.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/color_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ColorChoosingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_creampen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/MainFeedAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_view_lesson.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CreateQpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Model/McqSet.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_text.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CourseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/SyllabusActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AddQuestionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/quiz_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/transparent_overlay.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/text_back_3.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/transparent_black.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_studio.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_record.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/RecordActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/text_context_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AddTextActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/webview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/textview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/SliderAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_analysis.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_exam.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lesson.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_mycontribution_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/donate_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_feed_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/empty_item_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_splash.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable-v23/background_splash.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/LessonActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/StreamContentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/PyqListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ExamActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/PyqListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/mcq_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ChooseImageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/StudioActivity.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="83" />
+    <option name="width" value="1299" />
+    <option name="height" value="562" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.BuildVariants" value="debug&#10;release" />
+    <property name="ScreenshotViewer.SavePath" value="$USER_HOME$/Pictures" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="device.picker.selection" value="99QSQKF6DIJNSC7S" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/cream pen.jks" />
+    <property name="project.structure.last.edited" value="Build Variants" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="BUILD_VARIANTS_TAB" value="Build Types" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="release" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.parayada.creampen.Model" />
+      <recent name="com.parayada.creampen.Adapter" />
+      <recent name="com.parayada.creampen.Utils" />
+      <recent name="com.parayada.creampen.Activity" />
+      <recent name="com.parayada.creampen.Animation" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.parayada.creampen.Activity" />
+      <recent name="com.parayada.creampen.Adapter" />
+      <recent name="com.parayada.creampen" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be09c13b-16af-45b0-a73d-b44c6e50acd8" name="Default Changelist" comment="" />
+      <created>1593752832654</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593752832654</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43431222" weight="0.2733068" />
+      <window_info id="Structure" order="1" sideWeight="0.5023184" side_tool="true" weight="0.32988048" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3306773" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Build Variants" order="6" sideWeight="0.5656878" side_tool="true" weight="0.29243028" />
+      <window_info id="Resources Explorer" order="7" sideWeight="0.49768162" weight="0.32988048" />
+      <window_info id="Captures" order="8" side_tool="true" weight="0.24860558" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.5873261" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49880478" weight="0.7248841" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5672334" />
+      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49800798" weight="0.75734156" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4996016" weight="0.66460586" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32921174" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50756973" side_tool="true" weight="0.42503864" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49243027" visible="true" weight="0.42503864" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" sideWeight="0.4996016" weight="0.9536322" />
+      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5007728" side_tool="true" weight="0.4693227" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" sideWeight="0.4992272" weight="0.32988048" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.3306773" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43431222" visible="true" weight="0.2733068" />
+      <window_info id="Structure" order="1" sideWeight="0.5023184" side_tool="true" weight="0.32988048" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3306773" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Build Variants" order="6" sideWeight="0.5656878" side_tool="true" weight="0.29243028" />
+      <window_info id="Resources Explorer" order="7" sideWeight="0.49768162" weight="0.32988048" />
+      <window_info id="Captures" order="8" side_tool="true" weight="0.24860558" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.5873261" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49880478" weight="0.7248841" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5672334" />
+      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49800798" weight="0.75734156" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4996016" weight="0.66460586" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32921174" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50756973" side_tool="true" weight="0.42503864" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49243027" weight="0.42503864" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" sideWeight="0.4996016" weight="0.9536322" />
+      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5007728" side_tool="true" weight="0.4693227" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" sideWeight="0.4992272" weight="0.32988048" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.3306773" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="1120" column="19" selection-start-line="1120" selection-start-column="19" selection-end-line="1120" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/text/Spannable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/widget/EditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#EditText#0" />
+            <element signature="method#EditText#3;class#EditText#0" />
+            <element signature="docComment;method#setSelection#0;class#EditText#0" />
+            <element signature="docComment;method#setSelection#1;class#EditText#0" />
+            <element signature="docComment;method#selectAll#0;class#EditText#0" />
+            <element signature="docComment;method#extendSelection#0;class#EditText#0" />
+            <element signature="docComment;method#setEllipsize#0;class#EditText#0" />
+            <element signature="method#setEllipsize#0;class#EditText#0" />
+            <element signature="e#5627#5782#1" />
+            <element signature="docComment;method#supportsAutoSizeText#0;class#EditText#0" />
+            <element signature="docComment;method#onInitializeAccessibilityNodeInfoInternal#0;class#EditText#0" />
+            <element signature="method#onInitializeAccessibilityNodeInfoInternal#0;class#EditText#0" />
+            <element signature="e#6258#6356#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/text_context_menu.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/text/style/SubscriptSpan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/text/Html.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="443" column="39" selection-start-line="443" selection-start-column="37" selection-end-line="443" selection-end-column="39" />
+          <folding>
+            <element signature="e#9631#9632#0" expanded="true" />
+            <element signature="e#9703#9704#0" expanded="true" />
+            <element signature="e#39288#39289#0" expanded="true" />
+            <element signature="e#39321#39322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/com/android/carrierdefaultapp/CaptivePortalLoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="298" column="57" selection-start-line="298" selection-start-column="46" selection-end-line="298" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/webkit/WebView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_text.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/webview.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/textview.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AddTextActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="method#onCreate#0;class#AddTextActivity#0" />
+            <element signature="e#1256#2021#0" />
+            <element signature="e#1354#1476#1" />
+            <element signature="e#1481#1548#1" />
+            <element signature="e#1581#1682#1" />
+            <element signature="e#1709#1814#1" />
+            <element signature="e#1819#2011#1" />
+            <element signature="e#2109#2223#0" />
+            <element signature="method#onCreateActionMode#0;class#7811:12533" />
+            <element signature="method#onDestroyActionMode#0;class#7811:12533" />
+            <element signature="method#onActivityResult#0;class#AddTextActivity#0" />
+            <element signature="e#12775#12964#1" />
+            <element signature="e#12817#12954#1" />
+            <element signature="e#13039#13492#1" />
+            <element signature="e#13080#13482#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/SliderAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <folding>
+            <element signature="e#1029#1072#0" />
+            <element signature="docComment;method#getItemViewType#0;class#SliderAdapter#0" />
+            <element signature="e#1291#1299#0" />
+            <element signature="method#onCreateViewHolder#0;class#SliderAdapter#0" />
+            <element signature="e#1477#2529#0" />
+            <element signature="method#onBindViewHolder#0;class#SliderAdapter#0" />
+            <element signature="e#2749#6031#0" />
+            <element signature="e#3737#4324#0" />
+            <element signature="e#3820#4140#1" />
+            <element signature="e#3864#4023#1" />
+            <element signature="e#4145#4263#1" />
+            <element signature="e#5654#5710#0" />
+            <element signature="class#PicViewHolder#0;class#SliderAdapter#0" />
+            <element signature="method#PicViewHolder#0;class#PicViewHolder#0;class#SliderAdapter#0" />
+            <element signature="class#McqSetViewHolder#0;class#SliderAdapter#0" />
+            <element signature="method#McqSetViewHolder#0;class#McqSetViewHolder#0;class#SliderAdapter#0" />
+            <element signature="class#TextViewHolder#0;class#SliderAdapter#0" />
+            <element signature="method#TextViewHolder#0;class#TextViewHolder#0;class#SliderAdapter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.0/9a855b06d39c967b6d0f8841a0348d0b67a11d43/material-1.2.0-sources.jar!/com/google/android/material/bottomnavigation/BottomNavigationView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="android-manifest" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="54" column="61" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_analysis.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exam.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#951#1432#0" />
+            <element signature="e#1438#1720#0" />
+            <element signature="e#1726#2147#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lesson.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_mycontribution_view.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#732#980#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="11085" column="15" selection-start-line="11085" selection-start-column="15" selection-end-line="11085" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_feed_view.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#519#1359#0" />
+            <element signature="e#636#902#0" />
+            <element signature="e#916#1335#0" />
+            <element signature="e#1369#1839#0" />
+            <element signature="e#1849#2189#0" />
+            <element signature="e#2199#6793#0" />
+            <element signature="e#2570#3066#0" />
+            <element signature="e#3080#3518#0" />
+            <element signature="e#3532#3959#0" />
+            <element signature="e#3973#4611#0" />
+            <element signature="e#4625#5320#0" />
+            <element signature="e#5334#6025#0" />
+            <element signature="e#6039#6730#0" />
+            <element signature="e#6854#7280#0" />
+            <element signature="e#7290#7709#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pyq_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/empty_item_view.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_splash.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/donate_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding>
+            <element signature="e#1539#1564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+          <folding>
+            <element signature="e#1434#1439#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v23/background_splash.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CourseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-firestore/21.5.0/399e643bae4deaf8e6267cea779d75b2346c7961/firebase-firestore-21.5.0-sources.jar!/com/google/firebase/firestore/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="509" column="15" selection-start-line="509" selection-start-column="15" selection-end-line="509" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/LessonActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="142" column="10" selection-start-line="142" selection-start-column="10" selection-end-line="142" selection-end-column="10" />
+          <folding>
+            <element signature="e#4186#4187#0" expanded="true" />
+            <element signature="e#4251#4252#0" expanded="true" />
+            <element signature="e#5968#6293#0" />
+            <element signature="e#12024#12054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="method#loadAds#0;class#AnalysisActivity#0" />
+            <element signature="method#getTopicWiseAnalysedData#0;class#AnalysisActivity#0" />
+            <element signature="e#4422#4763#1" />
+            <element signature="method#analyseMcq#0;class#AnalysisActivity#0" />
+            <element signature="e#5526#5930#1" />
+            <element signature="method#generateCenterSpannableText#0;class#AnalysisActivity#0" />
+            <element signature="e#6196#6566#0" />
+            <element signature="method#loadPieChart#0;class#AnalysisActivity#0" />
+            <element signature="method#loadBarChart#0;class#AnalysisActivity#0" />
+            <element signature="class#10020:10554" />
+            <element signature="method#onValueSelected#0;class#10020:10554" />
+            <element signature="method#onNothingSelected#0;class#10020:10554" />
+            <element signature="method#getCropedMcq#0;class#AnalysisActivity#0" />
+            <element signature="e#10817#11217#1" />
+            <element signature="e#10861#11156#1" />
+            <element signature="e#10931#11142#1" />
+            <element signature="e#11251#11645#1" />
+            <element signature="e#11293#11588#1" />
+            <element signature="e#11363#11574#1" />
+            <element signature="e#11659#12045#1" />
+            <element signature="e#11701#11996#1" />
+            <element signature="e#11771#11982#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/MainFeedAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/ExamAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="method#ExamAdapter#1;class#ExamAdapter#0" />
+            <element signature="e#1018#1157#1" />
+            <element signature="e#1085#1147#1" />
+            <element signature="method#addNewMcq#0;class#ExamAdapter#0" />
+            <element signature="e#1447#1485#0" />
+            <element signature="e#1491#1499#0" />
+            <element signature="method#onCreateViewHolder#0;class#ExamAdapter#0" />
+            <element signature="method#onBindViewHolder#0;class#ExamAdapter#0" />
+            <element signature="e#2775#3996#1" />
+            <element signature="e#2868#3105#0" />
+            <element signature="e#3161#3398#0" />
+            <element signature="e#3454#3691#0" />
+            <element signature="e#3747#3984#0" />
+            <element signature="e#4010#4190#1" />
+            <element signature="e#4215#5172#1" />
+            <element signature="e#4621#4697#1" />
+            <element signature="e#4776#4852#1" />
+            <element signature="e#4931#5007#1" />
+            <element signature="e#5086#5162#1" />
+            <element signature="method#disableTouches#0;class#ExamAdapter#0" />
+            <element signature="e#5978#6034#1" />
+            <element signature="e#6097#6153#1" />
+            <element signature="e#6216#6272#1" />
+            <element signature="e#6335#6391#1" />
+            <element signature="method#getItemCount#0;class#ExamAdapter#0" />
+            <element signature="method#onFinish#0;class#ExamAdapter#0" />
+            <element signature="e#6714#6863#1" />
+            <element signature="class#McqViewHolder#0;class#ExamAdapter#0" />
+            <element signature="method#McqViewHolder#0;class#McqViewHolder#0;class#ExamAdapter#0" />
+            <element signature="e#7713#7784#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ExamActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+          <folding>
+            <element signature="method#loadAds#0;class#ExamActivity#0" />
+            <element signature="method#showInstruction#0;class#ExamActivity#0" />
+            <element signature="method#loadQuestionPaper#0;class#ExamActivity#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#ExamActivity#0" />
+            <element signature="method#onOptionsItemSelected#0;class#ExamActivity#0" />
+            <element signature="method#showAnalysis#0;class#ExamActivity#0" />
+            <element signature="method#onBackPressed#0;class#ExamActivity#0" />
+            <element signature="method#onDestroy#0;class#ExamActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AddQuestionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="122" column="25" lean-forward="true" selection-start-line="118" selection-end-line="122" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="610" column="19" selection-start-line="610" selection-start-column="19" selection-end-line="610" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/PyqListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="237" column="45" selection-start-line="237" selection-start-column="45" selection-end-line="237" selection-end-column="45" />
+          <folding>
+            <element signature="method#loadSpinners#0;class#PyqListActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Model/QuestionPaper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="429" column="12" selection-start-line="413" selection-start-column="12" selection-end-line="429" selection-end-column="12" />
+          <folding>
+            <element signature="e#3215#3615#0" />
+            <element signature="method#onCreate#0;class#MainActivity#0" />
+            <element signature="e#4413#4452#1" />
+            <element signature="e#4458#5271#1" />
+            <element signature="e#4593#4642#0" />
+            <element signature="method#loadAds#0;class#MainActivity#0" />
+            <element signature="e#5344#5371#0" />
+            <element signature="method#checkProfile#0;class#MainActivity#0" />
+            <element signature="e#5729#5888#1" />
+            <element signature="e#5901#6477#1" />
+            <element signature="method#loadUi#0;class#MainActivity#0" />
+            <element signature="method#onActivityResult#0;class#MainActivity#0" />
+            <element signature="e#7229#7632#1" />
+            <element signature="e#7396#7620#0" />
+            <element signature="e#7711#8011#1" />
+            <element signature="e#7754#7870#1" />
+            <element signature="e#7876#8001#1" />
+            <element signature="method#deleteSavedItem#0;class#MainActivity#0" />
+            <element signature="class#MainViewAdapter#0;class#MainActivity#0" />
+            <element signature="e#8769#8777#0" />
+            <element signature="method#onCreateViewHolder#0;class#MainViewAdapter#0;class#MainActivity#0" />
+            <element signature="e#8930#9241#1" />
+            <element signature="e#9267#9585#1" />
+            <element signature="e#9590#9911#1" />
+            <element signature="method#onBindViewHolder#0;class#MainViewAdapter#0;class#MainActivity#0" />
+            <element signature="e#10065#10142#1" />
+            <element signature="e#10165#10248#1" />
+            <element signature="e#10253#10336#1" />
+            <element signature="class#mainViewHolder#0;class#MainViewAdapter#0;class#MainActivity#0" />
+            <element signature="method#loadMyTeaching#0;class#MainActivity#0" />
+            <element signature="method#loadMyLearning#0;class#MainActivity#0" />
+            <element signature="e#12005#12042#0" />
+            <element signature="e#12460#14977#0" />
+            <element signature="e#12514#14959#1" />
+            <element signature="e#12897#13023#1" />
+            <element signature="e#13029#13126#1" />
+            <element signature="e#13152#13174#0" />
+            <element signature="e#13288#14099#1" />
+            <element signature="e#13695#13969#0" />
+            <element signature="e#14172#14936#1" />
+            <element signature="e#14353#14901#0" />
+            <element signature="e#14407#14595#0" />
+            <element signature="e#14648#14862#0" />
+            <element signature="method#onClick#0;class#15314:17287" />
+            <element signature="e#15466#16266#1" />
+            <element signature="e#15761#16246#0" />
+            <element signature="e#15827#16216#1" />
+            <element signature="e#16271#16326#1" />
+            <element signature="method#loadData#0;class#MainActivity#0" />
+            <element signature="e#18683#19193#0" />
+            <element signature="e#18737#19117#1" />
+            <element signature="e#18823#19035#1" />
+            <element signature="e#19362#19856#0" />
+            <element signature="e#19416#19838#1" />
+            <element signature="e#19505#19755#1" />
+            <element signature="e#20198#20290#1" />
+            <element signature="e#20296#20348#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/PyqListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding>
+            <element signature="method#getItemViewType#0;class#PyqListAdapter#0" />
+            <element signature="method#getItemCount#0;class#PyqListAdapter#0" />
+            <element signature="class#ViewHolder#0;class#PyqListAdapter#0" />
+            <element signature="method#ViewHolder#0;class#ViewHolder#0;class#PyqListAdapter#0" />
+            <element signature="class#EmptyViewHolder#0;class#PyqListAdapter#0" />
+            <element signature="method#EmptyViewHolder#0;class#EmptyViewHolder#0;class#PyqListAdapter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/TopicAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="209" column="16" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Adapter/StreamContentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mcq_view.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-29/android/content/ContentResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="883" column="74" lean-forward="true" selection-start-line="883" selection-start-column="74" selection-end-line="883" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ChooseImageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="177" column="9" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
+          <folding>
+            <element signature="method#onCreate#0;class#ChooseImageActivity#0" />
+            <element signature="method#loadUiandImages#0;class#ChooseImageActivity#0" />
+            <element signature="class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="method#onCreateViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="method#onBindViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="method#getItemCount#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="class#ViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="method#ViewHolder#0;class#ViewHolder#0;class#ImageAdapter#0;class#ChooseImageActivity#0" />
+            <element signature="method#onRequestPermissionsResult#0;class#ChooseImageActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/StudioActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="183" column="51" selection-start-line="183" selection-start-column="51" selection-end-line="183" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#StudioActivity#0" />
+            <element signature="docComment;field#mContext#0;class#StudioActivity#0" />
+            <element signature="docComment;field#sliderAdapter#0;class#StudioActivity#0" />
+            <element signature="method#onBackPressed#0;class#StudioActivity#0" />
+            <element signature="e#2212#2523#1" />
+            <element signature="e#2226#2311#0" />
+            <element signature="e#2537#2670#1" />
+            <element signature="e#3813#3949#1" />
+            <element signature="e#4534#4658#0" />
+            <element signature="e#4913#5337#0" />
+            <element signature="e#5381#5710#0" />
+            <element signature="e#5722#5835#0" />
+            <element signature="e#6112#6510#1" />
+            <element signature="e#6162#6498#0" />
+            <element signature="e#6553#6709#0" />
+            <element signature="method#hide#0;class#StudioActivity#0" />
+            <element signature="method#deleteLessonDraft#0;class#StudioActivity#0" />
+            <element signature="method#onSaveInstanceState#0;class#StudioActivity#0" />
+            <element signature="method#onRestoreInstanceState#0;class#StudioActivity#0" />
+            <element signature="method#onPause#0;class#StudioActivity#0" />
+            <element signature="method#onResume#0;class#StudioActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
