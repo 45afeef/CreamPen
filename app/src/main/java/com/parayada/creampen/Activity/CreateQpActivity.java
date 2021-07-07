@@ -13,6 +13,8 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -84,6 +86,8 @@ public class CreateQpActivity extends AppCompatActivity {
                         .setNegativeButton("Check again", null)
                         .setPositiveButton("Confirm to Upload", (d, w) -> {
 
+                            FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+
                             QuestionPaper qp = new QuestionPaper();
 
                             qp.setName(name);
@@ -91,6 +95,8 @@ public class CreateQpActivity extends AppCompatActivity {
                             qp.setInstruction(etInstruction.getText().toString().trim());
                             qp.setDate(System.currentTimeMillis());
                             qp.setQuestions(questionsAdapter.getQuestions());
+                            qp.addEducator(mUser.getUid(),mUser.getDisplayName());
+                            //Todo add code to select date for startAt and endAt
 
                             Toast.makeText(this,"Uploading your new created Quiz with " + qp.getQuestions().size()+ " questions",Toast.LENGTH_LONG).show();
 

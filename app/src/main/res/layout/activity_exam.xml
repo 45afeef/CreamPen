@@ -21,19 +21,6 @@
             ads:adUnitId="ca-app-pub-3032031918447892/8724009152"/>
 
 
-    <TextView
-            android:id="@+id/tv_counter"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:textSize="16sp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/colorPrimaryLight"
-            app:layout_constraintTop_toBottomOf="@id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_exam"
             app:layout_constraintTop_toBottomOf="@id/adView"
@@ -42,5 +29,20 @@
             android:clipToPadding="false"
             android:layout_width="match_parent"
             android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/tv_counter"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:textSize="16sp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryLight"
+        app:layout_constraintTop_toBottomOf="@id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

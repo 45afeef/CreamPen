@@ -14,9 +14,11 @@ public class QuestionPaper implements Parcelable {
     private int maxTime = 0;
     private long date = 0L;
     private ArrayList<String> questions;
-    // String educator consist of 0-educatorId 1-educatorName
     private ArrayList<String> educatorNames;
     private ArrayList<String> educatorIds;
+    private boolean lockAtFirst = false;
+    private Timestamp startAt;
+    private Timestamp endAt;
     @ServerTimestamp
     public Timestamp timestamp;
 
@@ -33,6 +35,9 @@ public class QuestionPaper implements Parcelable {
         questions = in.createStringArrayList();
         educatorIds = in.createStringArrayList();
         educatorNames = in.createStringArrayList();
+        lockAtFirst = in.readByte() != 0;
+        startAt = in.readParcelable(Timestamp.class.getClassLoader());
+        endAt = in.readParcelable(Timestamp.class.getClassLoader());
         timestamp = in.readParcelable(Timestamp.class.getClassLoader());
     }
 
@@ -46,6 +51,9 @@ public class QuestionPaper implements Parcelable {
         dest.writeStringList(questions);
         dest.writeStringList(educatorIds);
         dest.writeStringList(educatorNames);
+        dest.writeByte((byte) (lockAtFirst ? 1 : 0));
+        dest.writeParcelable(startAt, flags);
+        dest.writeParcelable(endAt, flags);
         dest.writeParcelable(timestamp, flags);
     }
 
@@ -80,6 +88,30 @@ public class QuestionPaper implements Parcelable {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    public boolean isLockAtFirst() {
+        return lockAtFirst;
+    }
+
+    public void setLockAtFirst(boolean lockAtFirst) {
+        this.lockAtFirst = lockAtFirst;
+    }
+
+    public Timestamp getStartAt() {
+        return startAt;
+    }
+
+    public void setStartAt(Timestamp startAt) {
+        this.startAt = startAt;
+    }
+
+    public Timestamp getEndAt() {
+        return endAt;
+    }
+
+    public void setEndAt(Timestamp endAt) {
+        this.endAt = endAt;
     }
 
     public int getMaxMark() {
@@ -134,4 +166,12 @@ public class QuestionPaper implements Parcelable {
         return timestamp;
     }
 
+    public void addEducator(String uid, String displayName) {
+        if(this.educatorIds == null){
+            this.educatorIds = new ArrayList<>();
+            this.educatorNames = new ArrayList<>();
+        }
+        this.educatorIds.add(uid);
+        this.educatorNames.add(displayName);
+    }
 }

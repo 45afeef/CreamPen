@@ -3,6 +3,7 @@ package com.parayada.creampen.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -40,6 +41,9 @@ public class ExamActivity extends AppCompatActivity {
 
         // Todo don't forgot to add ads in release build
         //loadAds();
+        
+
+        Log.d("ExamActivity","justStarted");
 
         if (getIntent().hasExtra("qp")){
             qp = getIntent().getParcelableExtra("qp");
@@ -51,8 +55,10 @@ public class ExamActivity extends AppCompatActivity {
                     .get()
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful() && task.getResult()!= null){
+                            Log.d("FirebaseResult","success");
 
                             qp = task.getResult().toObject(QuestionPaper.class);
+
                             if (qp != null){
                                 showInstruction();
                             }else {
@@ -60,6 +66,13 @@ public class ExamActivity extends AppCompatActivity {
                                 startActivity(new Intent(this,MainActivity.class));
                                 finish();
                             }
+                        }else {
+                            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                            alert.setTitle("Oh Sorry")
+                                    .setMessage("This quiz is not live yet or not available \n\nGet in touch with your educator so that you can come back here when this quiz is live")
+                                        .setPositiveButton("OK", (d,w) -> finish())
+                                        .setCancelable(false)
+                                    .show();
                         }
                     });
         }
@@ -122,7 +135,8 @@ public class ExamActivity extends AppCompatActivity {
 
         setTitle(qp.getName());
 
-        examAdapter = new ExamAdapter(qp.getQuestions());
+        examAdapter = new ExamAdapter(qp.getQuestions(),qp.isLockAtFirst());
+
 
         RecyclerView rvExam = findViewById(R.id.rv_exam);
         rvExam.setHasFixedSize(true);

@@ -26,11 +26,13 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<String> questions;
     ArrayList<String> answers = new ArrayList<>();
     private boolean isFinished = false;
+    private boolean lockAtFirst;
 
     public ExamAdapter(){}
 
-    public ExamAdapter(ArrayList<String> questions) {
+    public ExamAdapter(ArrayList<String> questions, boolean lockAtFirst) {
         this.questions = questions;
+        this.lockAtFirst = lockAtFirst;
         if (questions != null){
             answers.clear();
             for (String q:questions){
@@ -68,42 +70,102 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         McqViewHolder mcqHolder = (McqViewHolder) holder;
         McqSet mcqSet = new McqSet(questions.get(position));
 
+        // Set Question and four options
         mcqHolder.questionView.setText((position + 1) + " " + mcqSet.getQuestion());
         mcqHolder.option1View.setText(mcqSet.getOption1());
         mcqHolder.option2View.setText(mcqSet.getOption2());
         mcqHolder.option3View.setText(mcqSet.getOption3());
         mcqHolder.option4View.setText(mcqSet.getOption4());
 
-        // set Text color
+        // set Text color for question and options
         mcqHolder.questionView.setTextColor(Color.BLACK);
         mcqHolder.option1View.setTextColor(Color.BLACK);
         mcqHolder.option2View.setTextColor(Color.BLACK);
         mcqHolder.option3View.setTextColor(Color.BLACK);
         mcqHolder.option4View.setTextColor(Color.BLACK);
 
-        if (answers.get(position).equals("UnAttempted")) {
-            // show touch enabled mcq
-            mcqHolder.option1View.setOnClickListener(v -> {
-                answers.set(position, mcqHolder.option1View.getText().toString());
+        if(this.lockAtFirst) {
+            // Educator restrict second selection of answer and lock the first attempt
+            if (answers.get(position).equals("UnAttempted")) {
+                // Allow user to select a option as answer and lock it
+                mcqHolder.option1View.setOnClickListener(v -> {
+                    answers.set(position, mcqHolder.option1View.getText().toString());
+                    disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                });
+                mcqHolder.option2View.setOnClickListener(v -> {
+                    answers.set(position, mcqHolder.option2View.getText().toString());
+                    disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                });
+                mcqHolder.option3View.setOnClickListener(v -> {
+                    answers.set(position, mcqHolder.option3View.getText().toString());
+                    disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                });
+                mcqHolder.option4View.setOnClickListener(v -> {
+                    answers.set(position, mcqHolder.option4View.getText().toString());
+                    disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                });
+            } else {
+                // User already selected a option as answer
+                // As educator restricts changing the answer all other options are disabled
                 disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+            }
+
+        }else {
+            // Educator allowed to change the choice
+
+            mcqHolder.option1View.setOnClickListener(v -> {
+                // override the current selection for this question
+                if(answers.get(position).equals(mcqHolder.option1View.getText().toString())){
+                    // Remove this option as answer
+                    answers.set(position,"UnAttempted");
+                }else{
+                    // Add this option as answer
+                    answers.set(position, mcqHolder.option1View.getText().toString());
+                }
+                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+
             });
             mcqHolder.option2View.setOnClickListener(v -> {
-                answers.set(position, mcqHolder.option2View.getText().toString());
-                disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                // override the current selection for this question
+                if(answers.get(position).equals(mcqHolder.option2View.getText().toString())){
+                    // Remove this option as answer
+                    answers.set(position,"UnAttempted");
+                }else{
+                    // Add this option as answer
+                    answers.set(position, mcqHolder.option2View.getText().toString());
+                }
+                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+
             });
             mcqHolder.option3View.setOnClickListener(v -> {
-                answers.set(position, mcqHolder.option3View.getText().toString());
-                disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                // override the current selection for this question
+                if(answers.get(position).equals(mcqHolder.option3View.getText().toString())){
+                    // Remove this option as answer
+                    answers.set(position,"UnAttempted");
+                }else{
+                    // Add this option as answer
+                    answers.set(position, mcqHolder.option3View.getText().toString());
+                }
+                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+
             });
             mcqHolder.option4View.setOnClickListener(v -> {
-                answers.set(position, mcqHolder.option4View.getText().toString());
-                disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
+                // override the current selection for this question
+                if(answers.get(position).equals(mcqHolder.option4View.getText().toString())){
+                    // Remove this option as answer
+                    answers.set(position,"UnAttempted");
+                }else{
+                    // Add this option as answer
+                    answers.set(position, mcqHolder.option4View.getText().toString());
+                }
+                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+
             });
+
+            highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+
         }
-        else {
-            // show touch disabled mcq
-            disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
-        }
+
         if (isFinished) {
             //mcqHolder.questionView.setTextColor(Color.BLACK);
 
@@ -134,11 +196,19 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         // setTextColor
         int disabledColor = mContext.getResources().getColor(R.color.common_google_signin_btn_text_dark_disabled);
-        o1.setTextColor(disabledColor);
-        o2.setTextColor(disabledColor);
-        o3.setTextColor(disabledColor);
-        o4.setTextColor(disabledColor);
 
+        highlightSelectedOption(o1,o2,o3,o4,position,disabledColor);
+    }
+
+    private void highlightSelectedOption(TextView o1,TextView o2,TextView o3,TextView o4, int position,int defaultColor){
+
+        // Set default color for all options
+        o1.setTextColor(defaultColor);
+        o2.setTextColor(defaultColor);
+        o3.setTextColor(defaultColor);
+        o4.setTextColor(defaultColor);
+
+        // Show the selected option with highlight color
         int selectionColor = mContext.getResources().getColor(R.color.selected);
         if (isFinished)
             selectionColor = mContext.getResources().getColor(R.color.wrong);
