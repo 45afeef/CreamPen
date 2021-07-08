@@ -26,7 +26,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<String> questions;
     ArrayList<String> answers = new ArrayList<>();
     private boolean isFinished = false;
-    private boolean lockAtFirst;
+    private boolean lockAtFirst = true;
 
     public ExamAdapter(){}
 
@@ -111,56 +111,62 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
         }else {
-            // Educator allowed to change the choice
+            if(!isFinished) {
+                // Educator allowed to change the choice
+                mcqHolder.option1View.setOnClickListener(v -> {
+                    // override the current selection for this question
+                    if (answers.get(position).equals(mcqHolder.option1View.getText().toString())) {
+                        // Remove this option as answer
+                        answers.set(position, "UnAttempted");
+                    } else {
+                        // Add this option as answer
+                        answers.set(position, mcqHolder.option1View.getText().toString());
+                    }
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
 
-            mcqHolder.option1View.setOnClickListener(v -> {
-                // override the current selection for this question
-                if(answers.get(position).equals(mcqHolder.option1View.getText().toString())){
-                    // Remove this option as answer
-                    answers.set(position,"UnAttempted");
-                }else{
-                    // Add this option as answer
-                    answers.set(position, mcqHolder.option1View.getText().toString());
-                }
-                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+                });
+                mcqHolder.option2View.setOnClickListener(v -> {
+                    // override the current selection for this question
+                    if (answers.get(position).equals(mcqHolder.option2View.getText().toString())) {
+                        // Remove this option as answer
+                        answers.set(position, "UnAttempted");
+                    } else {
+                        // Add this option as answer
+                        answers.set(position, mcqHolder.option2View.getText().toString());
+                    }
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
 
-            });
-            mcqHolder.option2View.setOnClickListener(v -> {
-                // override the current selection for this question
-                if(answers.get(position).equals(mcqHolder.option2View.getText().toString())){
-                    // Remove this option as answer
-                    answers.set(position,"UnAttempted");
-                }else{
-                    // Add this option as answer
-                    answers.set(position, mcqHolder.option2View.getText().toString());
-                }
-                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+                });
+                mcqHolder.option3View.setOnClickListener(v -> {
+                    // override the current selection for this question
+                    if (answers.get(position).equals(mcqHolder.option3View.getText().toString())) {
+                        // Remove this option as answer
+                        answers.set(position, "UnAttempted");
+                    } else {
+                        // Add this option as answer
+                        answers.set(position, mcqHolder.option3View.getText().toString());
+                    }
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
 
-            });
-            mcqHolder.option3View.setOnClickListener(v -> {
-                // override the current selection for this question
-                if(answers.get(position).equals(mcqHolder.option3View.getText().toString())){
-                    // Remove this option as answer
-                    answers.set(position,"UnAttempted");
-                }else{
-                    // Add this option as answer
-                    answers.set(position, mcqHolder.option3View.getText().toString());
-                }
-                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+                });
+                mcqHolder.option4View.setOnClickListener(v -> {
+                    // override the current selection for this question
+                    if (answers.get(position).equals(mcqHolder.option4View.getText().toString())) {
+                        // Remove this option as answer
+                        answers.set(position, "UnAttempted");
+                    } else {
+                        // Add this option as answer
+                        answers.set(position, mcqHolder.option4View.getText().toString());
+                    }
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
 
-            });
-            mcqHolder.option4View.setOnClickListener(v -> {
-                // override the current selection for this question
-                if(answers.get(position).equals(mcqHolder.option4View.getText().toString())){
-                    // Remove this option as answer
-                    answers.set(position,"UnAttempted");
-                }else{
-                    // Add this option as answer
-                    answers.set(position, mcqHolder.option4View.getText().toString());
-                }
-                highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
-
-            });
+                });
+            }else{
+                mcqHolder.option1View.setOnClickListener(null);
+                mcqHolder.option2View.setOnClickListener(null);
+                mcqHolder.option3View.setOnClickListener(null);
+                mcqHolder.option4View.setOnClickListener(null);
+            }
 
             highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
 

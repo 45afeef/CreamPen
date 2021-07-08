@@ -15,15 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.parayada.creampen.Adapter.ExamAdapter;
-import com.parayada.creampen.Model.Course;
+import com.parayada.creampen.Model.AnswerPaper;
 import com.parayada.creampen.Model.QuestionPaper;
 import com.parayada.creampen.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ExamActivity extends AppCompatActivity {
 
@@ -32,7 +32,10 @@ public class ExamActivity extends AppCompatActivity {
     private QuestionPaper qp;
     private String quizId;
     private MenuItem finishExam;
+
     private CountDownTimer timer;
+    long timeleft;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,7 @@ public class ExamActivity extends AppCompatActivity {
         timer = new CountDownTimer(qp.getMaxTime()*60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
+                timeleft = millisUntilFinished;
 
                 int secs = (int) (millisUntilFinished / 1000);
                 int mins = secs / 60;
@@ -127,8 +131,7 @@ public class ExamActivity extends AppCompatActivity {
             public void onFinish() {
                 Toast.makeText(ExamActivity.this,"Checking your answers Please wait...", Toast.LENGTH_LONG).show();
                 finishExam.setTitle("Show Analysis");
-                answers = examAdapter.onFinish();
-                showAnalysis();
+                uploadAnswerPaper();
             }
 
         }.start();
@@ -159,14 +162,13 @@ public class ExamActivity extends AppCompatActivity {
             if (item.getTitle().equals(this.getResources().getString(R.string.finish_exam))) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
                 alert.setTitle("Finish Exam ?")
-                        .setMessage("Click OK to finish this exam and to submit your answers")
+                        .setMessage("Click Submit to finish this exam and to submit your answers")
                         .setNegativeButton("Check again", null)
-                        .setPositiveButton("OK", (dialog, which) -> {
+                        .setPositiveButton("Submit", (dialog, which) -> {
                             Toast.makeText(this,"Checking your answers Please wait...", Toast.LENGTH_LONG).show();
-                            answers = examAdapter.onFinish();
                             item.setTitle("Show Analysis");
                             timer.cancel();
-                            showAnalysis();
+                            uploadAnswerPaper();
                         })
                         .show();
             }
@@ -175,6 +177,35 @@ public class ExamActivity extends AppCompatActivity {
             }
         }
         return(super.onOptionsItemSelected(item));
+    }
+
+    private void uploadAnswerPaper(){
+        answers = examAdapter.onFinish();
+
+        // Now check whether the quiz attempt is made in between the statAt and endAt field
+        if(qp.getEndAt().getSeconds() > (System.currentTimeMillis()/1000)){
+
+            FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+
+            AnswerPaper answerPaper = new AnswerPaper();
+
+            answerPaper.setStudentId(mUser.getUid());
+            answerPaper.setStudentName(mUser.getDisplayName());
+            answerPaper.setQuestionPaperId(quizId);
+            answerPaper.setQuestionPaperName(qp.getName());
+            answerPaper.setQuestions(qp.getQuestions());
+            answerPaper.setAnswers(answers);
+            answerPaper.setTimeLeft(timeleft);
+            answerPaper.setMaxTime(qp.getMaxTime() * 60 * 1000);
+
+            FirebaseFirestore.getInstance()
+                    .document("Quizzes/" + quizId + "/AnswerPapers/"+mUser.getUid())
+                    .set(answerPaper);
+            Toast.makeText(this, "Your answers are submitted for educator review", Toast.LENGTH_SHORT).show();
+            finish();
+        }else{
+            showAnalysis();
+        }
     }
 
     private void showAnalysis() {
