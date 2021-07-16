@@ -34,7 +34,7 @@ public class ExamActivity extends AppCompatActivity {
     private MenuItem finishExam;
 
     private CountDownTimer timer;
-    long timeleft;
+    private long timeLeft;
 
 
     @Override
@@ -117,7 +117,7 @@ public class ExamActivity extends AppCompatActivity {
         timer = new CountDownTimer(qp.getMaxTime()*60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timeleft = millisUntilFinished;
+                timeLeft = millisUntilFinished;
 
                 int secs = (int) (millisUntilFinished / 1000);
                 int mins = secs / 60;
@@ -195,7 +195,7 @@ public class ExamActivity extends AppCompatActivity {
             answerPaper.setQuestionPaperName(qp.getName());
             answerPaper.setQuestions(qp.getQuestions());
             answerPaper.setAnswers(answers);
-            answerPaper.setTimeLeft(timeleft);
+            answerPaper.setTimeLeft(timeLeft);
             answerPaper.setMaxTime(qp.getMaxTime() * 60 * 1000);
 
             FirebaseFirestore.getInstance()
