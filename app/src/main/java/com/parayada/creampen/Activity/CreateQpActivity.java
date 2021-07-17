@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -52,6 +53,7 @@ public class CreateQpActivity extends AppCompatActivity {
         EditText etName = findViewById(R.id.et_qp_name);
         EditText etInstruction = findViewById(R.id.et_qp_instruction);
         EditText etMaxTime = findViewById(R.id.et_qp_maxtime);
+        SwitchMaterial lockSwitch = findViewById(R.id.lock_at_first);
         RecyclerView rvQuestions = findViewById(R.id.rv_questions);
         Button btnNewQuestion = findViewById(R.id.btn_new_question);
 
@@ -89,7 +91,7 @@ public class CreateQpActivity extends AppCompatActivity {
                 Toast.makeText(this,"Please add a maximum Time for the quiz",Toast.LENGTH_LONG).show();
                 etMaxTime.requestFocus();
             }
-            else if (questionsAdapter.getQuestions() == null || questionsAdapter.getQuestions().size() < 10){
+            else if (questionsAdapter.getQuestions() == null || questionsAdapter.getQuestions().size() < 1){
                 Toast.makeText(this,"Please add at least 10 questions",Toast.LENGTH_LONG).show();
                 btnNewQuestion.requestFocus();
             }
@@ -120,6 +122,7 @@ public class CreateQpActivity extends AppCompatActivity {
                             qp.setInstruction(etInstruction.getText().toString().trim());
                             qp.setDate(System.currentTimeMillis());
                             qp.setQuestions(questionsAdapter.getQuestions());
+                            qp.setLockAtFirst(lockSwitch.isChecked());
                             qp.addEducator(mUser.getUid(),mUser.getDisplayName());
 
                             // Set the Dates
@@ -182,8 +185,8 @@ public class CreateQpActivity extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(CreateQpActivity.this,
                 (dateView, year, monthOfYear, dayOfMonth) -> {
                     // set day of month , month and year value in the edit text
-                    String dd = "";
-                    String MM = "";
+                    String dd;
+                    String MM;
 
                     if (dayOfMonth<10) {dd = "0" + dayOfMonth;
                     }else {dd = String.valueOf(dayOfMonth);}
@@ -221,9 +224,7 @@ public class CreateQpActivity extends AppCompatActivity {
         dialog.setTitle("Cancel Quiz Creation?")
                 .setMessage("Are you sure to discard this quiz and close it now")
                 .setNegativeButton("Continue working",null)
-                .setPositiveButton("Discard and Exit", (dialog1, which) -> {
-                    super.onBackPressed();
-                });
+                .setPositiveButton("Discard and Exit", (dialog1, which) ->super.onBackPressed());
         dialog.create().show();
     }
 

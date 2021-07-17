@@ -39,9 +39,11 @@
         \n<b>No donation?</b>
         \nJust Create Lessons &amp; spread the word
     </string>
-    <string name="instruction_hint">Type the detailed instruction here, for your students</string>
     <string name="startAt">Starting date</string>
     <string name="expiresAt">Expiry date</string>
-    <string name="select_a_start_time">Select a time to start the quiz</string>
-    <string name="select_a_end_time">Select a time to end the quiz</string>
+    <string name="quiz_name_hint">Eg. Daily Exam</string>
+    <string name="instruction_hint">Type the detailed instruction for your students</string>
+    <string name="select_a_start_time">Eg. 01/01/2022 16:00</string>
+    <string name="select_a_end_time">Eg. 01/01/2022 17:30</string>
+    <string name="lockAtFirst">Lock the option at first attempt</string>
 </resources>
