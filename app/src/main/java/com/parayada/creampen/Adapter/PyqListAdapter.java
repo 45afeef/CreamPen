@@ -14,6 +14,7 @@ import com.parayada.creampen.Activity.ExamActivity;
 import com.parayada.creampen.Model.QuestionPaper;
 import com.parayada.creampen.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -72,12 +73,8 @@ public class PyqListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if (getItemViewType(position) == PYQ_HOLDER) {
             QuestionPaper qp = pyqList.get(position);
 
-            Calendar c = Calendar.getInstance();
-            c.setTimeInMillis(qp.getDate());
-
-
             ((ViewHolder) holder).tv1.setText(qp.getName());
-            ((ViewHolder) holder).tv2.setText(c.get(Calendar.MONTH) + "/" + c.get(Calendar.YEAR));
+            ((ViewHolder) holder).tv2.setText(new SimpleDateFormat("dd-MMM-yyyy").format(qp.getDate()));
 
             ((ViewHolder) holder).itemView.setOnClickListener(v -> {
                 clickHandler.onQpClick(qp);

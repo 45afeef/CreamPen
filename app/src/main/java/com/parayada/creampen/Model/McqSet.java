@@ -118,6 +118,10 @@ public class McqSet implements Serializable {
         return topicList;
     }
 
+    public String getTopicsAsString(){
+        return topics;
+    }
+
     public void setTopics(String topics) {
         this.topics = topics;
     }

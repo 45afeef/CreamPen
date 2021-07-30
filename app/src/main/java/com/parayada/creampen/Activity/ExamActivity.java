@@ -42,8 +42,8 @@ public class ExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
 
-        // Todo don't forgot to add ads in release build
-        //loadAds();
+        //Todo don't forgot to add ads in release build
+//        loadAds();
         
 
         Log.d("ExamActivity","justStarted");
@@ -91,7 +91,9 @@ public class ExamActivity extends AppCompatActivity {
 
         AdView adView = findViewById(R.id.adView);
         //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("E56246F9159612F353BE9D2DECF13389").build();
+        AdRequest adRequest = new AdRequest.Builder()
+//                .addTestDevice("E56246F9159612F353BE9D2DECF13389")
+                .build();
 
         adView.loadAd(adRequest);
     }
@@ -183,7 +185,7 @@ public class ExamActivity extends AppCompatActivity {
         answers = examAdapter.onFinish();
 
         // Now check whether the quiz attempt is made in between the statAt and endAt field
-        if(qp.getEndAt().getSeconds() > (System.currentTimeMillis()/1000)){
+        if(qp.getEndAt() != null && qp.getEndAt().getSeconds() > (System.currentTimeMillis()/1000)){
 
             FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
 

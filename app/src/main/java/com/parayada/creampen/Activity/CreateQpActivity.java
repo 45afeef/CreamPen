@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,19 +32,23 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CreateQpActivity extends AppCompatActivity {
+public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.clickHandler{
 
     private static final int RC_NEW_MCQ = 100;
-    private ExamAdapter questionsAdapter = new ExamAdapter();
+    private static final int RC_EDIT_MCQ = 101;
+
+    private ExamAdapter questionsAdapter = new ExamAdapter(this);
 
     private String syllabusString;
+    private String courseId;
+    private String quizId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_qp);
 
-        String courseId = getIntent().getStringExtra("courseId");
+        courseId = getIntent().getStringExtra("courseId");
         syllabusString = getIntent().getStringExtra("syllabus");
 
         // Initialize views
@@ -56,6 +61,46 @@ public class CreateQpActivity extends AppCompatActivity {
         SwitchMaterial lockSwitch = findViewById(R.id.lock_at_first);
         RecyclerView rvQuestions = findViewById(R.id.rv_questions);
         Button btnNewQuestion = findViewById(R.id.btn_new_question);
+
+        // Fetch and load quiz if quizId is provided
+        if (getIntent().hasExtra("quizId")) {
+            quizId = getIntent().getStringExtra("quizId");
+            setTitle("Edit Quiz");
+            // Fetch from server
+            FirebaseFirestore.getInstance().document("Quizzes/" + quizId)
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful() && task.getResult() != null) {
+                            QuestionPaper qp = task.getResult().toObject(QuestionPaper.class);
+                            if (qp == null) {
+                                Toast.makeText(this, "Can't find the Quiz", Toast.LENGTH_LONG).show();
+                                finish();
+                            } else {
+                                etName.setText(qp.getName());
+                                etInstruction.setText(qp.getInstruction());
+                                etMaxTime.setText(String.valueOf(qp.getMaxTime()));
+                                lockSwitch.setChecked(qp.isLockAtFirst());
+
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+                                tvStartAt.setText(sdf.format(qp.getStartAt().toDate()));
+                                tvEndAt.setText(sdf.format(qp.getEndAt().toDate()));
+
+                                questionsAdapter.setQuestions(qp.getQuestions());
+
+                            }
+                        }else {
+                            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                            alert.setTitle("Oh Sorry")
+                                    .setMessage("This quiz is not live yet or not available \n\nGet in touch with your educator so that you can come back when this quiz is live")
+                                    .setPositiveButton("OK", (d, w) -> finish())
+                                    .setCancelable(false)
+                                    .show();
+                        }
+                    });
+        }
+
+        // Set intractive with switch
+        lockSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> questionsAdapter.setLockAtFirst(isChecked));
 
         // Set question recycler view
         rvQuestions.setHasFixedSize(true);
@@ -138,24 +183,42 @@ public class CreateQpActivity extends AppCompatActivity {
 
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                            db.collection("Quizzes")
-                                    .add(qp)
-                                    .addOnSuccessListener(documentReference -> {
+                            if(quizId != null) {
+                                db.collection("Quizzes")
+                                        .add(qp)
+                                        .addOnSuccessListener(documentReference -> {
+                                            Toast.makeText(this, "Uploading Quiz is completed", Toast.LENGTH_LONG).show();
+                                            finish();
 
-                                        Toast.makeText(this,"Uploading Quiz is completed",Toast.LENGTH_LONG).show();
+                                            String quizTypeIdName = getResources().getString(R.string.CodeQuiz) +
+                                                    getResources().getString(R.string.mySeparator) +
+                                                    documentReference.getId() +
+                                                    getResources().getString(R.string.mySeparator) +
+                                                    qp.getName() + "\n" + qp.getQuestions().size() + " Questions";
 
-                                        finish();
-                                        String quizTypeIdName = getResources().getString(R.string.CodeQuiz) +
-                                                getResources().getString(R.string.mySeparator) +
-                                                documentReference.getId() +
-                                                getResources().getString(R.string.mySeparator) +
-                                                qp.getName()+"\n"+qp.getQuestions().size()+" Questions";
-                                        db.document("Courses/"+courseId)
-                                                .update("lessons", FieldValue.arrayUnion(quizTypeIdName));
-                                    });
+                                            db.document("Courses/" + courseId)
+                                                    .update("lessons", FieldValue.arrayUnion(quizTypeIdName));
+                                        });
+                            }else {
+                                db.collection("Quizzes").document(quizId)
+                                        .set(qp)
+                                        .addOnSuccessListener(aVoid -> {
+                                            Toast.makeText(this, "Uploading Quiz is completed", Toast.LENGTH_LONG).show();
 
+                                            String quizTypeIdName = getResources().getString(R.string.CodeQuiz) +
+                                                    getResources().getString(R.string.mySeparator) +
+                                                    quizId +
+                                                    getResources().getString(R.string.mySeparator) +
+                                                    qp.getName() + "\n" + qp.getQuestions().size() + " Questions";
 
+                                            Intent data = new Intent();
+                                            data.putExtra("quizTypeIdName", quizTypeIdName);
+                                            setResult(RESULT_OK, data);
 
+                                            finish();
+                                        });
+                            }
+                            // Disable the fields while uploading
                             etName.setEnabled(false);
                             etMaxTime.setEnabled(false);
                             etInstruction.setEnabled(false);
@@ -231,10 +294,27 @@ public class CreateQpActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_NEW_MCQ && resultCode == RESULT_OK){
 
-            questionsAdapter.addNewMcq((McqSet) data.getSerializableExtra("newQuestionSet"));
+        if(resultCode == RESULT_OK){
+            if(requestCode == RC_NEW_MCQ){
+                questionsAdapter.addNewMcq((McqSet) data.getSerializableExtra("newQuestionSet"));
+            }else if(requestCode == RC_EDIT_MCQ){
+                questionsAdapter.setMcq(
+                        data.getIntExtra("qIndex",0),
+                        (McqSet) data.getSerializableExtra("newQuestionSet"));
+            }
             syllabusString = data.getStringExtra("syllabus");
         }
+    }
+
+    @Override
+    public void onLongClickMcq(int index,String qString) {
+        Intent toAddNewQuestion = new Intent(this, AddQuestionActivity.class);
+
+        toAddNewQuestion.putExtra("qString",qString);
+        toAddNewQuestion.putExtra("qIndex",index);
+        toAddNewQuestion.putExtra("syllabus",syllabusString);
+        toAddNewQuestion.putExtra("courseId",courseId);
+        startActivityForResult(toAddNewQuestion,RC_EDIT_MCQ);
     }
 }

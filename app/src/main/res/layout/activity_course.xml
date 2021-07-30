@@ -36,19 +36,22 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_new_lesson"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_margin="@dimen/fab_margin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:srcCompat="@android:drawable/ic_input_add" android:accessibilityHeading="true"/>
+        android:id="@+id/fab_new_lesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:accessibilityHeading="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
+            android:id="@+id/new_lesson_label"
             android:text="New Lesson"
             android:padding="4dp"
             android:layout_margin="8dp"
+            android:visibility="gone"
             android:textColor="@android:color/holo_blue_dark"
             android:labelFor="@id/fab_new_lesson"
             android:layout_width="wrap_content"
@@ -58,20 +61,22 @@
             app:layout_constraintEnd_toStartOf="@id/fab_new_lesson"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_new_qp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_margin="@dimen/fab_margin"
-            app:layout_constraintStart_toStartOf="@id/fab_new_lesson"
-            app:layout_constraintEnd_toEndOf="@id/fab_new_lesson"
-            app:layout_constraintBottom_toTopOf="@id/fab_new_lesson"
-            app:srcCompat="@drawable/ic_creampen"
-            app:fabSize="mini"/>
+        android:id="@+id/fab_new_qp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:visibility="gone"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@id/fab_new_lesson"
+        app:layout_constraintEnd_toEndOf="@id/fab_new_lesson"
+        app:layout_constraintStart_toStartOf="@id/fab_new_lesson"
+        app:srcCompat="@drawable/ic_question" />
 
     <TextView
+            android:id="@+id/new_quiz_label"
             android:text="New Quiz"
             android:padding="4dp"
+            android:visibility="gone"
             android:layout_margin="8dp"
             android:textColor="@android:color/holo_blue_dark"
             android:labelFor="@id/fab_new_lesson"

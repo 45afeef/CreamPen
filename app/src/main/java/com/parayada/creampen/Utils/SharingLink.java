@@ -9,14 +9,13 @@ import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.ShortDynamicLink;
 import com.parayada.creampen.Model.Course;
 import com.parayada.creampen.Model.TypeIdName;
-import com.parayada.creampen.R;
 
 public class SharingLink {
 
     public static void Course(Course c, Context mContext) {
 
         FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://creampen.com/Courses/" + c.getId()))
+                .setLink(Uri.parse("https://parayadalearn-c105d.web.app/Courses/" + c.getId()))
                 .setDomainUriPrefix("https://parayada.page.link")
                 // Open links with this app on Android
                 .setAndroidParameters((new DynamicLink.AndroidParameters.Builder().build()))
@@ -50,10 +49,10 @@ public class SharingLink {
         String link = "";
         switch (mObject.getType()) {
             case 100:
-                link = "https://creampen.com/Lessons/" + mObject.getId();
+                link = "https://parayadalearn-c105d.web.app/Lessons/" + mObject.getId();
                 break;
             case 101:
-                link = "https://creampen.com/Quizzes/" + mObject.getId();
+                link = "https://parayadalearn-c105d.web.app/Quizzes/" + mObject.getId();
                 break;
         }
 
@@ -64,6 +63,11 @@ public class SharingLink {
                 .setAndroidParameters((new DynamicLink.AndroidParameters.Builder().build()))
                 // Open links with com.example.ios on iOS
                 // .setIosParameters(new DynamicLink.IosParameters.Builder("com.parayada.ios").build())
+                .setSocialMetaTagParameters(
+                        new DynamicLink.SocialMetaTagParameters.Builder()
+                                .setTitle("CreamPen App - free for always")
+                                .setDescription("A malayalee initiative to spread the joy of learning")
+                                .build())
                 .buildShortDynamicLink(ShortDynamicLink.Suffix.SHORT)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

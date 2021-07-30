@@ -54,13 +54,32 @@ public class AddQuestionActivity extends AppCompatActivity {
         final EditText option4View = findViewById(R.id.et_D);
         tvTopics = findViewById(R.id.tv_topics);
 
-
         RadioGroup rgOptions = (RadioGroup) findViewById(R.id.rg_options);
         Button btnSave = findViewById(R.id.btn_saveQuestion);
 
         rgOptions.setOnCheckedChangeListener((group, checkedId) -> {
             checkedButton = group.findViewById(checkedId);
         });
+
+
+        if (getIntent().hasExtra("qString")) {
+            McqSet mcq = new McqSet(getIntent().getStringExtra("qString"));
+
+            questionView.setText(mcq.getQuestion());
+            option1View.setText(mcq.getOption1());
+            option2View.setText(mcq.getOption2());
+            option3View.setText(mcq.getOption3());
+            option4View.setText(mcq.getOption4());
+
+            topics = mcq.getTopicsAsString();
+            tvTopics.setText(topics);
+
+            if(mcq.getAnswer().equals(mcq.getOption1())) ((RadioButton) rgOptions.getChildAt(0)).setChecked(true);
+            if(mcq.getAnswer().equals(mcq.getOption2())) ((RadioButton) rgOptions.getChildAt(1)).setChecked(true);
+            if(mcq.getAnswer().equals(mcq.getOption3())) ((RadioButton) rgOptions.getChildAt(2)).setChecked(true);
+            if(mcq.getAnswer().equals(mcq.getOption4())) ((RadioButton) rgOptions.getChildAt(3)).setChecked(true);
+
+        }
 
         btnSave.setOnClickListener(v -> {
 
@@ -117,6 +136,8 @@ public class AddQuestionActivity extends AppCompatActivity {
                 mcqSet.setTopics(topics);
 
                 Intent data = new Intent();
+                if(getIntent().hasExtra("qIndex"))
+                    data.putExtra("qIndex",getIntent().getIntExtra("qIndex",0));
                 data.putExtra("newQuestionSet", mcqSet);
                 data.putExtra("syllabus",syllabus);
                 setResult(Activity.RESULT_OK, data);

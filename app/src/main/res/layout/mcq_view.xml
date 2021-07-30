@@ -5,7 +5,7 @@
         android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_margin="8dp"
         android:layout_gravity="center"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/black3"
         android:gravity="center">
 

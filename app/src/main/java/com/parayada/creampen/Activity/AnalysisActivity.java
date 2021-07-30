@@ -63,7 +63,8 @@ public class AnalysisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis);
 
-        //loadAds();
+        //Todo load ads
+//        loadAds();
 
         questions = getIntent().getStringArrayListExtra("questions");
         selectedAnswers = getIntent().getStringArrayListExtra("answers");
@@ -104,7 +105,9 @@ public class AnalysisActivity extends AppCompatActivity {
 
         AdView adView = findViewById(R.id.adView);
         //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("E56246F9159612F353BE9D2DECF13389").build();
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
+                .build();
 
         adView.loadAd(adRequest);
     }

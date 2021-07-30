@@ -49,6 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
         if(mUser.getPhotoUrl() == null){
             Glide.with(this)
                     .load("https://api.adorable.io/avatars/300/"+mUser.getUid())
+                    //.load("https://api.adorable.io/avatars/300/"+mUser.getUid())
                     //.load("https://avatars.dicebear.com/api/avataaars/"+ mUser.getUid() + ".svg")
                     .into(ivProfile);
         }else {

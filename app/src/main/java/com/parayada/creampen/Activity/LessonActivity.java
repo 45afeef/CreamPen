@@ -140,7 +140,8 @@ public class LessonActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) { actionBar.hide(); }
 
-        //loadAds();
+        //Todo ads
+//        loadAds();
 
         // Initialize views
         mVisible = true;
@@ -168,7 +169,9 @@ public class LessonActivity extends AppCompatActivity {
 
         AdView adView = findViewById(R.id.adView);
         //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("E56246F9159612F353BE9D2DECF13389").build();
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
+                .build();
 
         adView.loadAd(adRequest);
     }

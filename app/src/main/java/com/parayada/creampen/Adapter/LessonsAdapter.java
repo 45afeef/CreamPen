@@ -24,9 +24,18 @@ public class LessonsAdapter extends RecyclerView.Adapter {
 
     Context mContext;
     private ArrayList<TypeIdName> items;
+    private boolean isEducator;
+    private lessonClickHandler mClickHandler;
 
-    public LessonsAdapter(ArrayList<TypeIdName> items) {
+    public interface lessonClickHandler{
+        void editQuiz(int index,String quizId);
+    }
+
+    public LessonsAdapter(ArrayList<TypeIdName> items, boolean isEducator,Context context) {
+        this.mContext = context;
         this.items = items;
+        this.isEducator = isEducator;
+        this.mClickHandler = (lessonClickHandler) context;
     }
 
     @Override
@@ -37,11 +46,10 @@ public class LessonsAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        mContext = parent.getContext();
         if (viewType == Integer.parseInt(mContext.getString(R.string.CodeLesson))) {
             return new LessonViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_course, parent, false));
         }
-        else {
+        else{
             return new QuizViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.quiz_item, parent, false));
         }
     }
@@ -77,16 +85,21 @@ public class LessonsAdapter extends RecyclerView.Adapter {
                 quizHolder.name.setText("Quiz\n"+item.getName());
                 quizHolder.itemView.setOnClickListener(v -> {
                     Intent toQuizIntent = new Intent(mContext, ExamActivity.class);
-
                     toQuizIntent.putExtra("quizId", item.getId());
                     mContext.startActivity(toQuizIntent);
-
                 });
                 quizHolder.shareBtn.setOnClickListener(v -> {
                     Toast.makeText(mContext,"Fetching link for this quiz named \""+ item.getName() + "\"",Toast.LENGTH_LONG).show();
                     SharingLink.TypeIdName(item,mContext);
                 });
-                    break;
+
+                // Enable editButton for quizzes only if the user id includes in educator list
+                if(isEducator) {
+                    quizHolder.editBtn.setVisibility(View.VISIBLE);
+                    quizHolder.editBtn.setOnClickListener(v->mClickHandler.editQuiz(position,item.getId()));
+                }
+
+                break;
         }
 
     }
@@ -118,6 +131,7 @@ public class LessonsAdapter extends RecyclerView.Adapter {
         TextView name ;
         TextView position ;
         ImageButton shareBtn;
+        ImageButton editBtn;
 
         private QuizViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -125,6 +139,7 @@ public class LessonsAdapter extends RecyclerView.Adapter {
             name = itemView.findViewById(R.id.tv_quiz_name);
             position = itemView.findViewById(R.id.tv_sl_no);
             shareBtn = itemView.findViewById(R.id.ib_share_quiz);
+            editBtn = itemView.findViewById((R.id.ib_edit_quiz));
 
         }
     }

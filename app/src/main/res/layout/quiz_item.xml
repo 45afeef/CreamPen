@@ -1,40 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:minHeight="50dp"
-              android:background="@color/colorCreamLight"
-              android:layout_margin="8dp"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorCreamLight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
             android:id="@+id/tv_sl_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="4dp"
+            android:text="sl"
+            android:orientation="vertical"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+        <TextView
             android:id="@+id/tv_quiz_name"
-            android:paddingBottom="16dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="8dp"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/colorPrimary"
-            android:textAlignment="textStart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingStart="8dp"
+            android:text="quiz name"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sl_no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
+        <ImageButton
             android:id="@+id/ib_share_quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:background="@android:drawable/ic_menu_share"
-            android:layout_gravity="end"
-            android:layout_margin="4dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/ib_edit_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="4dp"
+            android:background="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="@id/ib_share_quiz"
+            app:layout_constraintEnd_toStartOf="@id/ib_share_quiz"
+            app:layout_constraintTop_toTopOf="@id/ib_share_quiz" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>>
+</androidx.cardview.widget.CardView>

@@ -148,4 +148,9 @@ public class Course implements Parcelable {
             educatorNames = new ArrayList<>();
         educatorNames.add(educatorName);
     }
+
+    public void setLesson(int index, String quizTypeIdName) {
+        if (this.lessons != null)
+            this.lessons.set(index,quizTypeIdName);
+    }
 }

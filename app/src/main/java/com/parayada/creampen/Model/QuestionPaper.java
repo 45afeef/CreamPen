@@ -16,7 +16,7 @@ public class QuestionPaper implements Parcelable {
     private ArrayList<String> questions;
     private ArrayList<String> educatorNames;
     private ArrayList<String> educatorIds;
-    private boolean lockAtFirst = false;
+    private boolean lockAtFirst = true;
     private Timestamp startAt;
     private Timestamp endAt;
     @ServerTimestamp

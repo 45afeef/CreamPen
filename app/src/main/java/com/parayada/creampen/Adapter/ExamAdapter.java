@@ -9,14 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.parayada.creampen.Model.McqSet;
 import com.parayada.creampen.R;
 
 import java.util.ArrayList;
-import java.util.function.UnaryOperator;
 
 import static android.graphics.Typeface.NORMAL;
 
@@ -27,8 +28,15 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<String> answers = new ArrayList<>();
     private boolean isFinished = false;
     private boolean lockAtFirst = true;
+    private clickHandler mClickHandler;
 
-    public ExamAdapter(){}
+    public interface clickHandler{
+        void onLongClickMcq(int position,String qString);
+    }
+
+    public ExamAdapter(Context context) {
+        mClickHandler = (clickHandler) context;
+    }
 
     public ExamAdapter(ArrayList<String> questions, boolean lockAtFirst) {
         this.questions = questions;
@@ -47,7 +55,31 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         questions.add(mcqSet.getQuestionAsString());
         answers.add(mcqSet.getAnswer());
         notifyDataSetChanged();
+    }
 
+    public void setMcq(int index, McqSet mcqSet) {
+        questions.set(index,mcqSet.getQuestionAsString());
+        answers.set(index,mcqSet.getAnswer());
+        notifyDataSetChanged();
+    }
+
+    public void setLockAtFirst(boolean isChecked) {
+        this.lockAtFirst = isChecked;
+        // Set isFinished to true to restrict changing the option accidentally by an educator
+        // This happens when we make interactive view on isLockAtFirst switch
+        this.isFinished = true;
+        notifyDataSetChanged();
+    }
+
+    public void setQuestions(ArrayList<String> questions) {
+
+
+        this.questions = questions;
+        this.answers.clear();
+        for (String q:questions){
+            answers.add(new McqSet(q).getAnswer());
+        }
+        notifyDataSetChanged();
     }
 
     public ArrayList<String> getQuestions(){
@@ -70,8 +102,16 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         McqViewHolder mcqHolder = (McqViewHolder) holder;
         McqSet mcqSet = new McqSet(questions.get(position));
 
+        // Set onLongClickListener to enable editing the question by Educator is mClickHandler is enabled
+        if(mClickHandler != null){
+            mcqHolder.itemView.setOnLongClickListener(v -> {
+                mClickHandler.onLongClickMcq(position,questions.get(position));
+                return false;
+            });
+        }
+
         // Set Question and four options
-        mcqHolder.questionView.setText((position + 1) + " " + mcqSet.getQuestion());
+        mcqHolder.questionView.setText((position + 1) + ") " + mcqSet.getQuestion());
         mcqHolder.option1View.setText(mcqSet.getOption1());
         mcqHolder.option2View.setText(mcqSet.getOption2());
         mcqHolder.option3View.setText(mcqSet.getOption3());
@@ -80,9 +120,13 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         // set Text color for question and options
         mcqHolder.questionView.setTextColor(Color.BLACK);
         mcqHolder.option1View.setTextColor(Color.BLACK);
+        mcqHolder.option1View.setBackgroundColor(Color.TRANSPARENT);
         mcqHolder.option2View.setTextColor(Color.BLACK);
+        mcqHolder.option2View.setBackgroundColor(Color.TRANSPARENT);
         mcqHolder.option3View.setTextColor(Color.BLACK);
+        mcqHolder.option3View.setBackgroundColor(Color.TRANSPARENT);
         mcqHolder.option4View.setTextColor(Color.BLACK);
+        mcqHolder.option4View.setBackgroundColor(Color.TRANSPARENT);
 
         if(this.lockAtFirst) {
             // Educator restrict second selection of answer and lock the first attempt
@@ -110,7 +154,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 disableTouches(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
             }
 
-        }else {
+        }else {// this.lockAtFirst == false
             if(!isFinished) {
                 // Educator allowed to change the choice
                 mcqHolder.option1View.setOnClickListener(v -> {
@@ -122,7 +166,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         // Add this option as answer
                         answers.set(position, mcqHolder.option1View.getText().toString());
                     }
-                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
 
                 });
                 mcqHolder.option2View.setOnClickListener(v -> {
@@ -134,7 +178,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         // Add this option as answer
                         answers.set(position, mcqHolder.option2View.getText().toString());
                     }
-                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
 
                 });
                 mcqHolder.option3View.setOnClickListener(v -> {
@@ -146,7 +190,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         // Add this option as answer
                         answers.set(position, mcqHolder.option3View.getText().toString());
                     }
-                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
 
                 });
                 mcqHolder.option4View.setOnClickListener(v -> {
@@ -158,7 +202,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         // Add this option as answer
                         answers.set(position, mcqHolder.option4View.getText().toString());
                     }
-                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position, Color.GRAY);
+                    highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
 
                 });
             }else{
@@ -168,7 +212,7 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 mcqHolder.option4View.setOnClickListener(null);
             }
 
-            highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position,Color.GRAY);
+            highlightSelectedOption(mcqHolder.option1View, mcqHolder.option2View, mcqHolder.option3View, mcqHolder.option4View, position);
 
         }
 
@@ -181,16 +225,19 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 anColor = mContext.getResources().getColor(R.color.skipped);
 
             if (mcqHolder.option1View.getText().toString().equals(mcqSet.getAnswer())){
-                mcqHolder.option1View.setTextColor(anColor);
+                mcqHolder.option1View.setTextColor(Color.WHITE);
+                mcqHolder.option1View.setBackgroundColor(anColor);
             }else if (mcqHolder.option2View.getText().toString().equals(mcqSet.getAnswer())){
-                mcqHolder.option2View.setTextColor(anColor);
+                mcqHolder.option2View.setTextColor(Color.WHITE);
+                mcqHolder.option2View.setBackgroundColor(anColor);
             }else if (mcqHolder.option3View.getText().toString().equals(mcqSet.getAnswer())){
-                mcqHolder.option3View.setTextColor(anColor);
+                mcqHolder.option3View.setTextColor(Color.WHITE);
+                mcqHolder.option3View.setBackgroundColor(anColor);
             }else if (mcqHolder.option4View.getText().toString().equals(mcqSet.getAnswer())){
-                mcqHolder.option4View.setTextColor(anColor);
+                mcqHolder.option4View.setTextColor(Color.WHITE);
+                mcqHolder.option4View.setBackgroundColor(anColor);
             }
         }
-
 
     }
 
@@ -200,19 +247,24 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         o3.setOnClickListener(null);
         o4.setOnClickListener(null);
 
-        // setTextColor
-        int disabledColor = mContext.getResources().getColor(R.color.common_google_signin_btn_text_dark_disabled);
-
-        highlightSelectedOption(o1,o2,o3,o4,position,disabledColor);
+        highlightSelectedOption(o1,o2,o3,o4,position);
     }
 
-    private void highlightSelectedOption(TextView o1,TextView o2,TextView o3,TextView o4, int position,int defaultColor){
+    private void highlightSelectedOption(TextView o1,TextView o2,TextView o3,TextView o4, int position){
 
-        // Set default color for all options
-        o1.setTextColor(defaultColor);
-        o2.setTextColor(defaultColor);
-        o3.setTextColor(defaultColor);
-        o4.setTextColor(defaultColor);
+        // Set Text color
+        o1.setTextColor(Color.GRAY);
+        o2.setTextColor(Color.GRAY);
+        o3.setTextColor(Color.GRAY);
+        o4.setTextColor(Color.GRAY);
+
+        // Now set background color
+        int bgColor = Color.TRANSPARENT;
+        if (this.lockAtFirst) bgColor = Color.LTGRAY;
+        o1.setBackgroundColor(bgColor);
+        o2.setBackgroundColor(bgColor);
+        o3.setBackgroundColor(bgColor);
+        o4.setBackgroundColor(bgColor);
 
         // Show the selected option with highlight color
         int selectionColor = mContext.getResources().getColor(R.color.selected);
@@ -220,13 +272,17 @@ public class ExamAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             selectionColor = mContext.getResources().getColor(R.color.wrong);
 
         if (answers.get(position).equals(o1.getText().toString())){
-            o1.setTextColor(selectionColor);
+            o1.setTextColor(Color.WHITE);
+            o1.setBackgroundColor(selectionColor);
         }else if (answers.get(position).equals(o2.getText().toString())){
-            o2.setTextColor(selectionColor);
+            o2.setTextColor(Color.WHITE);
+            o2.setBackgroundColor(selectionColor);
         }else if (answers.get(position).equals(o3.getText().toString())){
-            o3.setTextColor(selectionColor);
+            o3.setTextColor(Color.WHITE);
+            o3.setBackgroundColor(selectionColor);
         }else if (answers.get(position).equals(o4.getText().toString())){
-            o4.setTextColor(selectionColor);
+            o4.setTextColor(Color.WHITE);
+            o4.setBackgroundColor(selectionColor);
         }
     }
 

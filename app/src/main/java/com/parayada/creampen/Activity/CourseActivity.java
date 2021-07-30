@@ -1,8 +1,15 @@
 package com.parayada.creampen.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,31 +18,25 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.parayada.creampen.Adapter.LessonsAdapter;
 import com.parayada.creampen.Model.Course;
-import com.parayada.creampen.Model.TypeIdName;
 import com.parayada.creampen.Model.SavedItem;
+import com.parayada.creampen.Model.TypeIdName;
 import com.parayada.creampen.R;
 import com.parayada.creampen.Room.SavedItemViewModel;
 import com.parayada.creampen.Utils.SharingLink;
 
 import java.util.ArrayList;
 
-public class CourseActivity extends AppCompatActivity {
+public class CourseActivity extends AppCompatActivity implements LessonsAdapter.lessonClickHandler{
 
     private static final int RC_CHOOSE_TOPIC = 100;
+    private static final int RC_UPDATE_LESSON = 101;
     private Course course;
     FirebaseUser mUser;
     boolean isEducator = false;
@@ -88,9 +89,11 @@ public class CourseActivity extends AppCompatActivity {
     private void loadCourse() {
         isEducator = course.getEducatorIds().contains(mUser.getUid());
         if (isEducator){
-
             //Course Activity is opened by an Educator
+
+            // Show NewLessonFab and label
             FloatingActionButton fabLesson = findViewById(R.id.fab_new_lesson);
+            findViewById(R.id.new_lesson_label).setVisibility(View.VISIBLE);
             fabLesson.setVisibility(View.VISIBLE);
             fabLesson.setOnClickListener(v -> {
 
@@ -142,7 +145,9 @@ public class CourseActivity extends AppCompatActivity {
                 }
             });
 
+            // Show NewQuizFab and label
             FloatingActionButton fabQp = findViewById(R.id.fab_new_qp);
+            findViewById(R.id.new_quiz_label).setVisibility(View.VISIBLE);
             fabQp.setVisibility(View.VISIBLE);
             fabQp.setOnClickListener(v->{
                 Intent newQPIntent = new Intent(this,CreateQpActivity.class);
@@ -161,7 +166,7 @@ public class CourseActivity extends AppCompatActivity {
         RecyclerView rvLessons = findViewById(R.id.rv_lessons);
         rvLessons.setHasFixedSize(true);
         rvLessons.setLayoutManager(new LinearLayoutManager(this));
-        rvLessons.setAdapter(new LessonsAdapter(new TypeIdName().toTypeIdNameArrayList(course.getLessons())));
+        rvLessons.setAdapter(new LessonsAdapter(new TypeIdName().toTypeIdNameArrayList(course.getLessons()),isEducator,this));
 
     }
 
@@ -196,6 +201,7 @@ public class CourseActivity extends AppCompatActivity {
             savedCourse.setItemType("Course");
             savedCourse.setItemId(courseId);
 
+            // Show save button if and only if it is not saved
             mViewModel.getItemByIdAndType(savedCourse).observe(this, item -> {
                 if (item ==null ){
                     menu.getItem(0).setVisible(true);
@@ -233,7 +239,6 @@ public class CourseActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_CHOOSE_TOPIC) {
-
             // Update syllabus if changed
             if (data != null && data.hasExtra("syllabus")) {
                 String newSyllabus = data.getStringExtra("syllabus");
@@ -267,6 +272,31 @@ public class CourseActivity extends AppCompatActivity {
                         });
                 dialog.create().show();
             }
+        }else if(requestCode == RC_UPDATE_LESSON) {
+            if (resultCode == RESULT_OK) {
+
+
+
+                int index = data.getIntExtra("index",0);
+                String quizTypeIdName = data.getStringExtra("quizTypeIdName");
+
+                course.setLesson(index,quizTypeIdName);
+                FirebaseFirestore.getInstance().document("Courses/" + courseId)
+                        .update("lessons", course.getLessons());
+
+            }
         }
+    }
+
+    @Override
+    public void editQuiz(int index,String quizId) {
+        Intent newQPIntent = new Intent(this,CreateQpActivity.class);
+
+        newQPIntent.putExtra("lessonIndex",index);
+        newQPIntent.putExtra("quizId", quizId);
+        newQPIntent.putExtra("courseId", course.getId());
+        newQPIntent.putExtra("syllabus",course.getSyllabus());
+
+        startActivityForResult(newQPIntent,RC_UPDATE_LESSON);
     }
 }

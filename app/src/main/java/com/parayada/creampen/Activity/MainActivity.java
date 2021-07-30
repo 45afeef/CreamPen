@@ -7,10 +7,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -22,6 +26,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -45,7 +50,12 @@ import com.parayada.creampen.Model.SavedItem;
 import com.parayada.creampen.R;
 import com.parayada.creampen.Room.SavedItemViewModel;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements SavedItemAdpater.clickHandler{
 
@@ -101,7 +111,8 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
         setContentView(R.layout.activity_main);
         context = this;
 
-        //loadAds();
+        // Todo load ads
+//        loadAds();
 
         loadingView = findViewById(R.id.loadingBar);
         loadingView.setVisibility(View.VISIBLE);
@@ -122,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
                     //new AuthUI.IdpConfig.FacebookBuilder().build(),
                     //new AuthUI.IdpConfig.TwitterBuilder().build(),
                     //new AuthUI.IdpConfig.EmailBuilder().build(),
-                    new AuthUI.IdpConfig.GoogleBuilder().build(),
+                    //new AuthUI.IdpConfig.GoogleBuilder().build(),
                     new AuthUI.IdpConfig.PhoneBuilder().build()
                     );
             startActivityForResult(
@@ -141,7 +152,9 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
 
         AdView adView = findViewById(R.id.adView);
         //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("E56246F9159612F353BE9D2DECF13389").build();
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
+                .build();
         adView.loadAd(adRequest);
     }
 
