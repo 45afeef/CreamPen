@@ -99,7 +99,7 @@ public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.c
                     });
         }
 
-        // Set intractive with switch
+        // Set interactive with switch
         lockSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> questionsAdapter.setLockAtFirst(isChecked));
 
         // Set question recycler view
@@ -183,7 +183,7 @@ public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.c
 
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                            if(quizId != null) {
+                            if(quizId == null) {
                                 db.collection("Quizzes")
                                         .add(qp)
                                         .addOnSuccessListener(documentReference -> {
@@ -213,8 +213,11 @@ public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.c
 
                                             Intent data = new Intent();
                                             data.putExtra("quizTypeIdName", quizTypeIdName);
-                                            setResult(RESULT_OK, data);
 
+                                            int ind = getIntent().getIntExtra("lessonIndex",-1);
+
+                                            data.putExtra("lessonIndex",ind);
+                                            setResult(RESULT_OK, data);
                                             finish();
                                         });
                             }

@@ -36,7 +36,7 @@ public class SharingLink {
                         Intent shareIntent = new Intent(Intent.ACTION_SEND);
                         shareIntent.setType("text/plain");
                         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Cream Pen");
-                        String shareMessage = shortLink + "\n\nLet me recommend you the course *\"" + c.getTitle() + "\"* teaches by - " + c.getEducatorNames().toString().substring(1,c.getEducatorNames().toString().length()-1);
+                        String shareMessage = shortLink + "\n\nLet me recommend you the course \n*\"" + c.getTitle() + "\"* \nteaches by - " + c.getEducatorNames().toString().substring(1,c.getEducatorNames().toString().length()-1);
                         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage +"\n\n" + c.getDescription());
                         mContext.startActivity(Intent.createChooser(shareIntent, "Share this course"));
 
@@ -65,8 +65,8 @@ public class SharingLink {
                 // .setIosParameters(new DynamicLink.IosParameters.Builder("com.parayada.ios").build())
                 .setSocialMetaTagParameters(
                         new DynamicLink.SocialMetaTagParameters.Builder()
-                                .setTitle("CreamPen App - free for always")
-                                .setDescription("A malayalee initiative to spread the joy of learning")
+                                .setTitle("CreamPen App - learn free for always")
+                                .setDescription("A initiative to learn and teach better. Lets spread the joy of learning")
                                 .build())
                 .buildShortDynamicLink(ShortDynamicLink.Suffix.SHORT)
                 .addOnCompleteListener(task -> {
@@ -82,7 +82,7 @@ public class SharingLink {
                             case 101:
 
                                 int newLine = mObject.getName().indexOf("\n");
-                                shareMessage += " attempt the mini quiz named *\""+mObject.getName().substring(0,newLine)+"\"* contains " + mObject.getName().substring(newLine+1);
+                                shareMessage += " attempt the mini quiz named \n*\""+mObject.getName().substring(0,newLine)+"\"*\nwhich contains " + mObject.getName().substring(newLine+1);
                                 break;
                         }
 

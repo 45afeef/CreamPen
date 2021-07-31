@@ -82,7 +82,7 @@ public class LessonsAdapter extends RecyclerView.Adapter {
                 QuizViewHolder quizHolder = (QuizViewHolder) h;
 
                 quizHolder.position.setText(String.valueOf(position+1));
-                quizHolder.name.setText("Quiz\n"+item.getName());
+                quizHolder.name.setText(item.getName());
                 quizHolder.itemView.setOnClickListener(v -> {
                     Intent toQuizIntent = new Intent(mContext, ExamActivity.class);
                     toQuizIntent.putExtra("quizId", item.getId());

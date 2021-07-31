@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.parayada.creampen.Adapter.LessonsAdapter;
 import com.parayada.creampen.Model.Course;
@@ -37,13 +36,15 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
 
     private static final int RC_CHOOSE_TOPIC = 100;
     private static final int RC_UPDATE_LESSON = 101;
-    private Course course;
-    FirebaseUser mUser;
+
     boolean isEducator = false;
-    String separator;
-    private SavedItemViewModel mViewModel;
+
     private String courseId;
 
+    private SavedItemViewModel mViewModel;
+
+    private FirebaseUser mUser;
+    private Course course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,6 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
         setContentView(R.layout.activity_course);
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-        separator = getResources().getString(R.string.mySeparator);
 
         if (getIntent().hasExtra("course")){
             course = (Course) getIntent().getParcelableExtra("course");
@@ -275,15 +275,12 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
         }else if(requestCode == RC_UPDATE_LESSON) {
             if (resultCode == RESULT_OK) {
 
-
-
-                int index = data.getIntExtra("index",0);
+                int index = data.getIntExtra("lessonIndex",-1);
                 String quizTypeIdName = data.getStringExtra("quizTypeIdName");
 
                 course.setLesson(index,quizTypeIdName);
                 FirebaseFirestore.getInstance().document("Courses/" + courseId)
                         .update("lessons", course.getLessons());
-
             }
         }
     }
