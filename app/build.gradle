@@ -25,7 +25,6 @@ android {
         }
         release {
             debuggable false
-            useProguard true
             multiDexEnabled true
 
 
