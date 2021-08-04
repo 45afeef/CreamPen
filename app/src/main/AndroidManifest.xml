@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:dist="http://schemas.android.com/apk/distribution"
-          package="com.parayada.creampen">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.parayada.creampen">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <dist:module dist:instant="true"/>
+    <dist:module dist:instant="true" />
 
     <application
-            android:name="androidx.multidex.MultiDexApplication"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity.AddEducatorActivity"
+            android:exported="true" />
         <!-- Sample AdMob   App ID: ca-app-pub-3940256099942544~3347511713 -->
-
         <!-- AdMob CreamPen App ID: ca-app-pub-3032031918447892~1911087165 -->
         <meta-data
-                android:name="com.google.android.gms.ads.APPLICATION_ID"
-                android:value="ca-app-pub-3032031918447892~1911087165"/>
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3032031918447892~1911087165" />
 
-        <activity android:name=".Activity.ColorChoosingActivity">
-        </activity>
+        <activity android:name=".Activity.ColorChoosingActivity"></activity>
         <activity
-                android:name=".Activity.CreateQpActivity"
-                android:label="@string/create_quiz"/>
-        <activity android:name=".Activity.AnalysisActivity"/>
+            android:name=".Activity.CreateQpActivity"
+            android:label="@string/create_quiz" />
+        <activity android:name=".Activity.AnalysisActivity" />
         <activity
-                android:name=".Activity.ExamActivity"
-                android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.PyqListActivity"/>
+            android:name=".Activity.ExamActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.PyqListActivity" />
         <activity
-                android:name=".Activity.RecordActivity"
-                android:screenOrientation="landscape"/>
-        <activity android:name=".Activity.AddTextActivity"/>
-        <activity android:name=".Activity.AddQuestionActivity"/>
-        <activity android:name=".Activity.ChooseImageActivity"/>
+            android:name=".Activity.RecordActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activity.AddTextActivity" />
+        <activity android:name=".Activity.AddQuestionActivity" />
+        <activity android:name=".Activity.ChooseImageActivity" />
         <activity
-                android:name=".Activity.StudioActivity"
-                android:screenOrientation="landscape"/>
+            android:name=".Activity.StudioActivity"
+            android:screenOrientation="landscape" />
         <activity
-                android:name=".Activity.CreateCourseActivity"
-                android:label="@string/create_course"/>
-        <activity android:name=".Activity.EditProfileActivity"/>
+            android:name=".Activity.CreateCourseActivity"
+            android:label="@string/create_course" />
+        <activity android:name=".Activity.EditProfileActivity" />
         <activity
-                android:name=".Activity.LessonActivity"
-                android:screenOrientation="landscape"/>
-        <activity android:name=".Activity.CourseActivity"/>
-        <activity android:name=".Activity.SyllabusActivity"/>
+            android:name=".Activity.LessonActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activity.CourseActivity" />
+        <activity android:name=".Activity.SyllabusActivity" />
         <activity
-                android:name=".Activity.SplashActivity"
-                android:theme="@style/SplashTheme">
+            android:name=".Activity.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                        android:host="creampen.com"
-                        android:scheme="http"/>
+                    android:host="creampen.com"
+                    android:scheme="http" />
                 <data
-                        android:host="creampen.com"
-                        android:scheme="https"/>
+                    android:host="creampen.com"
+                    android:scheme="https" />
                 <data
-                        android:host="parayada.page.link"
-                        android:scheme="http"/>
+                    android:host="parayada.page.link"
+                    android:scheme="http" />
                 <data
-                        android:host="parayada.page.link"
-                        android:scheme="https"/>
+                    android:host="parayada.page.link"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"/>
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>

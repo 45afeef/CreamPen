@@ -14,4 +14,9 @@
         app:showAsAction="ifRoom"
         android:title="Share"/>
 
+    <item
+        android:id="@+id/action_educators"
+        app:showAsAction="never"
+        android:title="Educators"/>
+
 </menu>

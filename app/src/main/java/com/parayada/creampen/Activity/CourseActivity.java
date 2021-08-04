@@ -36,6 +36,7 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
 
     private static final int RC_CHOOSE_TOPIC = 100;
     private static final int RC_UPDATE_LESSON = 101;
+    private static final int RC_ADD_EDUCATOR = 102;
 
     boolean isEducator = false;
 
@@ -231,6 +232,20 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
                 if (course!=null)
                     SharingLink.Course(course,this);
                 break;
+            case R.id.action_educators:
+                if( course!= null) {
+                    AlertDialog.Builder b = new AlertDialog.Builder(this);
+                    b.setTitle("Educators");
+                    b.setItems(course.getEducatorNames().toArray(new String[0]), null);
+                    if(isEducator){
+                        b.setPositiveButton("Add New Educator", (dialogInterface, i) -> {
+                            Intent newEducatorIntent = new Intent(this,AddEducatorActivity.class);
+                            newEducatorIntent.putExtra("courseId", course.getId());
+                            startActivityForResult(newEducatorIntent,RC_ADD_EDUCATOR);
+                        });
+                    }
+                    b.show();
+                }
         }
         return(super.onOptionsItemSelected(item));
     }

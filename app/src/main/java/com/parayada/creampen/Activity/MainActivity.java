@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
             user.put("phone", mUser.getPhoneNumber());
             user.put("lastLogin",FieldValue.serverTimestamp());
 
-            db.document("Users/"+mUser.getUid()).update(user);
+            db.document("Users/"+mUser.getUid()).set(user);
 
             //Load UI
             loadUi();
