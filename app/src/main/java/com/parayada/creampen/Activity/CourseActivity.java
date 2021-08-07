@@ -155,6 +155,8 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
 
                 newQPIntent.putExtra("courseId", course.getId());
                 newQPIntent.putExtra("syllabus",course.getSyllabus());
+                newQPIntent.putStringArrayListExtra("educatorIds",course.getEducatorIds());
+                newQPIntent.putStringArrayListExtra("educatorNames",course.getEducatorNames());
 
                 startActivity(newQPIntent);
             });
@@ -308,6 +310,8 @@ public class CourseActivity extends AppCompatActivity implements LessonsAdapter.
         newQPIntent.putExtra("quizId", quizId);
         newQPIntent.putExtra("courseId", course.getId());
         newQPIntent.putExtra("syllabus",course.getSyllabus());
+        newQPIntent.putStringArrayListExtra("educatorIds",course.getEducatorIds());
+        newQPIntent.putStringArrayListExtra("educatorNames",course.getEducatorNames());
 
         startActivityForResult(newQPIntent,RC_UPDATE_LESSON);
     }

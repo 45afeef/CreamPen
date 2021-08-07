@@ -30,6 +30,7 @@ import com.parayada.creampen.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.clickHandler{
@@ -168,7 +169,8 @@ public class CreateQpActivity extends AppCompatActivity implements ExamAdapter.c
                             qp.setDate(System.currentTimeMillis());
                             qp.setQuestions(questionsAdapter.getQuestions());
                             qp.setLockAtFirst(lockSwitch.isChecked());
-                            qp.addEducator(mUser.getUid(),mUser.getDisplayName());
+                            qp.setEducatorIds(getIntent().getStringArrayListExtra("educatorIds"));
+                            qp.setEducatorNames(getIntent().getStringArrayListExtra("educatorNames"));
 
                             // Set the Dates
                             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm");
