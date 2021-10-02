@@ -8,27 +8,31 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.*;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.parayada.creampen.Adapter.AnalyseAdapter;
 import com.parayada.creampen.Model.McqSet;
 import com.parayada.creampen.R;
+import com.parayada.creampen.Utils.GoogleAdGarage;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -63,8 +67,8 @@ public class AnalysisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis);
 
-        //Todo load ads
-//        loadAds();
+        // Load Ads from adGarage
+        GoogleAdGarage.loadBannerFromXml(this,findViewById(R.id.adView));
 
         questions = getIntent().getStringArrayListExtra("questions");
         selectedAnswers = getIntent().getStringArrayListExtra("answers");
@@ -98,18 +102,6 @@ public class AnalysisActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         analyseAdapter = new AnalyseAdapter(cropedMcqs,cropedAnswers);
         rv.setAdapter(analyseAdapter);
-    }
-
-    private void loadAds() {
-        MobileAds.initialize(this, initializationStatus -> { });
-
-        AdView adView = findViewById(R.id.adView);
-        //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder()
-                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
-                .build();
-
-        adView.loadAd(adRequest);
     }
 
     private BarData getTopicWiseAnalysedData(

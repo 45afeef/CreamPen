@@ -8,8 +8,8 @@ android {
         applicationId "com.parayada.creampen"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 5
-        versionName "Version 0.002"
+        versionCode 6
+        versionName "0.003"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -26,8 +26,6 @@ android {
         release {
             debuggable false
             multiDexEnabled true
-
-
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile(

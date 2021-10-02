@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="printingsplash" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="afeef" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
@@ -113,6 +113,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be09c13b-16af-45b0-a73d-b44c6e50acd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Utils/GoogleAdGarage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileChanges/last-build.bin" beforeDir="false" />
@@ -120,16 +124,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/.Rhistory" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CourseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CourseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CreateQpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/CreateQpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/debug/app.aab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app.aab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/AnalysisActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ExamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/ExamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/LessonActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/LessonActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/parayada/creampen/Activity/SplashActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,8 +216,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="CreamPen.app" />
+    <property name="BundleExportedModule" value="CreamPen.app" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
-    <property name="ExportApk.BuildVariants" value="debug&#10;release" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -417,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628095874679</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updates educatorIds in Quizzes is current educators in Course, Updated SplashActivity to support redirect from browser.">
+      <created>1628345813111</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628345813111</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,10 +450,16 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="212" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="212" />
                 </map>
               </option>
             </State>
@@ -468,7 +492,8 @@
     <MESSAGE value="Now Quiz can be updated by the educator. some code clean ups" />
     <MESSAGE value="gitignore added and gradle updated" />
     <MESSAGE value="existing educator now can add more educators using phoneNumber" />
-    <option name="LAST_COMMIT_MESSAGE" value="existing educator now can add more educators using phoneNumber" />
+    <MESSAGE value="Updates educatorIds in Quizzes is current educators in Course, Updated SplashActivity to support redirect from browser." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates educatorIds in Quizzes is current educators in Course, Updated SplashActivity to support redirect from browser." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

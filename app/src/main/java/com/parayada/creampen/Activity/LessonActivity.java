@@ -1,4 +1,4 @@
-    package com.parayada.creampen.Activity;
+package com.parayada.creampen.Activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -7,10 +7,7 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-
-import android.os.PersistableBundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -31,10 +27,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
@@ -42,15 +34,13 @@ import com.google.firebase.storage.StorageReference;
 import com.parayada.creampen.Adapter.SliderAdapter;
 import com.parayada.creampen.Animation.ZoomOutPageTransformer;
 import com.parayada.creampen.Model.Lesson;
-import com.parayada.creampen.Model.McqSet;
 import com.parayada.creampen.Model.SavedItem;
 import com.parayada.creampen.R;
 import com.parayada.creampen.Room.SavedItemViewModel;
+import com.parayada.creampen.Utils.GoogleAdGarage;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -140,8 +130,8 @@ public class LessonActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) { actionBar.hide(); }
 
-        //Todo ads
-//        loadAds();
+        // Load Ads from adGarage
+        GoogleAdGarage.loadBannerFromXml(this,findViewById(R.id.adView));
 
         // Initialize views
         mVisible = true;
@@ -162,18 +152,6 @@ public class LessonActivity extends AppCompatActivity {
         }else {
             loadUi();
         }
-    }
-
-    private void loadAds() {
-        MobileAds.initialize(this, initializationStatus -> { });
-
-        AdView adView = findViewById(R.id.adView);
-        //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder()
-                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
-                .build();
-
-        adView.loadAd(adRequest);
     }
 
     private void loadUi() {

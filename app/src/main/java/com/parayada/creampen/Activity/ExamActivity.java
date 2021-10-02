@@ -8,13 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,6 +21,7 @@ import com.parayada.creampen.Adapter.ExamAdapter;
 import com.parayada.creampen.Model.AnswerPaper;
 import com.parayada.creampen.Model.QuestionPaper;
 import com.parayada.creampen.R;
+import com.parayada.creampen.Utils.GoogleAdGarage;
 
 import java.util.ArrayList;
 
@@ -42,9 +42,8 @@ public class ExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
 
-        //Todo don't forgot to add ads in release build
-//        loadAds();
-        
+        // Load Ads from adGarage
+        GoogleAdGarage.loadBannerFromXml(this,findViewById(R.id.adView));
 
         Log.d("ExamActivity","justStarted");
 
@@ -84,18 +83,6 @@ public class ExamActivity extends AppCompatActivity {
             startActivity(new Intent(this,MainActivity.class));
             finish();
         }
-    }
-
-    private void loadAds() {
-        MobileAds.initialize(this, initializationStatus -> { });
-
-        AdView adView = findViewById(R.id.adView);
-        //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder()
-//                .addTestDevice("E56246F9159612F353BE9D2DECF13389")
-                .build();
-
-        adView.loadAd(adRequest);
     }
 
     private void showInstruction(){

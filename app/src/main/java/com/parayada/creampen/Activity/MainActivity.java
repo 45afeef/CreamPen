@@ -28,9 +28,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,6 +46,7 @@ import com.parayada.creampen.Model.Lesson;
 import com.parayada.creampen.Model.SavedItem;
 import com.parayada.creampen.R;
 import com.parayada.creampen.Room.SavedItemViewModel;
+import com.parayada.creampen.Utils.GoogleAdGarage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
     private static final int RC_CREATE_COURSE = 100;
     private static final int RC_SIGN_IN = 101;
     private static final int RC_EDIT_PROFILE = 102;
+
+    private static final Long appVersion = 6L;
 
     private FirebaseFirestore db;
     private FirebaseUser mUser;
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
         setContentView(R.layout.activity_main);
         context = this;
 
-        // Todo load ads
-//        loadAds();
+        // Load Ads from adGarage
+        GoogleAdGarage.loadBannerFromXml(this,findViewById(R.id.adView));
 
         loadingView = findViewById(R.id.loadingBar);
         loadingView.setVisibility(View.VISIBLE);
@@ -145,17 +145,6 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
                     RC_SIGN_IN);
         }
 
-    }
-
-    private void loadAds() {
-        MobileAds.initialize(this, initializationStatus -> { });
-
-        AdView adView = findViewById(R.id.adView);
-        //Load Ad in adView
-        AdRequest adRequest = new AdRequest.Builder()
-                //.addTestDevice("E56246F9159612F353BE9D2DECF13389")
-                .build();
-        adView.loadAd(adRequest);
     }
 
     private void checkProfile() {
@@ -368,7 +357,7 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
 
                         //Checking app version
                         // and controlling usage
-                        if (5L < document.getLong("minVersion")){
+                        if (appVersion < document.getLong("minVersion")){
                             new AlertDialog.Builder(this)
                                     .setTitle("Update Cream Pen")
                                     .setMessage("You are using a version no longer support \n\nPlease update to latest version")
@@ -380,8 +369,7 @@ public class MainActivity extends AppCompatActivity implements SavedItemAdpater.
                                     .setCancelable(false)
                                     .show();
                         }
-                        else if (5L < document.getLong("latestVersion")){
-
+                        else if (appVersion < document.getLong("latestVersion")){
                             Snackbar.make(v, "New Update is available with more new features", Snackbar.LENGTH_LONG)
                                     .setAction("UPDATE NOW", view -> {
                                         try {
