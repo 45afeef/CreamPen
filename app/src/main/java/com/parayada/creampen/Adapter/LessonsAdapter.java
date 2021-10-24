@@ -2,6 +2,7 @@ package com.parayada.creampen.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,9 @@ import com.parayada.creampen.Activity.ExamActivity;
 import com.parayada.creampen.Activity.LessonActivity;
 import com.parayada.creampen.Model.TypeIdName;
 import com.parayada.creampen.R;
+import com.parayada.creampen.Utils.ImagetoVideo;
 import com.parayada.creampen.Utils.SharingLink;
+import com.parayada.creampen.Utils.VideoMaker;
 
 import java.util.ArrayList;
 
@@ -74,6 +77,17 @@ public class LessonsAdapter extends RecyclerView.Adapter {
                     Toast.makeText(mContext,"Fetching link for the lesson \""+ item.getName() + "\"",Toast.LENGTH_LONG).show();
                     SharingLink.TypeIdName(item,mContext);
                 });
+
+                // Download and save the lesson as a mp4 video in device
+                if(isEducator) {
+                    // TODO add alertDialog to confirm to start video cration
+                    lessonHolder.itemView.setOnLongClickListener(v -> {
+                        VideoMaker.makeVideoFromLessonId(item.getId(),mContext,v);
+//                        ImagetoVideo.convertImageToVideo(item.getId());
+                        return true;
+                    });
+                }
+
                 break;
             case 101:
                 // Code 101 is for Quiz

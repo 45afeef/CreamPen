@@ -155,7 +155,7 @@ public class SliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         return slideList.size();
     }
 
-    private class PicViewHolder extends RecyclerView.ViewHolder{
+    public class PicViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView imageView;
 
@@ -166,8 +166,7 @@ public class SliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     }
 
-    private class McqSetViewHolder extends RecyclerView.ViewHolder{
-
+    public class McqSetViewHolder extends RecyclerView.ViewHolder{
 
         private TextView questionView;
         private TextView option1View;
@@ -186,7 +185,7 @@ public class SliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    private class TextViewHolder extends RecyclerView.ViewHolder {
+    public class TextViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
 

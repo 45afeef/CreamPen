@@ -209,7 +209,6 @@ public class LessonActivity extends AppCompatActivity {
                 int pro = seekBar.getProgress();
                 mPlayer.seekTo(pro);
 
-
                 int currentItem=0;
                 for (String c:slideChangeList){
 
